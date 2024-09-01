@@ -1,5 +1,5 @@
-export default function havefound() {
+export default function HaveFound() {
     return (
-        <h1>Have Found</h1>
+        <h1 style={{backgroundColor: "green"}}>HAVE FOUND</h1>
     )
 }

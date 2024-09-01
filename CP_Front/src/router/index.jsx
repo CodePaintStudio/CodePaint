@@ -8,6 +8,7 @@ export default function RouteConfig() {
         <Routes>
             <Route path="/havefound" element={<HaveFound/>}></Route>
             <Route path="/notfound" element={<NotFound/>}></Route>
+            <Route path="/" element={<HaveFound/>}></Route>
             <Route path="*" element={<NotFound/>}></Route>
         </Routes>
     )
