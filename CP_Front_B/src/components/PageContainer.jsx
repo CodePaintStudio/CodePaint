@@ -1,9 +1,6 @@
-import {useState} from 'react';
-import {NavLink} from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import RouteConfig from "../router/index.jsx"
 import {
-    MenuFoldOutlined,
-    MenuUnfoldOutlined,
     CarryOutOutlined,
     UserOutlined,
     AppstoreOutlined,
@@ -11,23 +8,50 @@ import {
     EditOutlined
 } from '@ant-design/icons';
 
-import {Button, Layout, Menu, theme} from 'antd';
+import {Layout, Menu, theme} from 'antd';
+import * as style from "../styles/PageContainer.module.css"
 
-const {Header, Sider, Content} = Layout;
+const {Sider, Content} = Layout;
 
 export default function PageContainer() {
-    const [collapsed, setCollapsed] = useState(false);
+    const navigate = useNavigate();
     const {
         token: {colorBgContainer, borderRadiusLG},
     } = theme.useToken();
 
+    const handleClick = (e) => {
+        switch (e.key) {
+            case '1':
+                navigate('/home');
+                break;
+            case '2':
+                navigate('/articles');
+                break;
+            case '3':
+                navigate('/addarticle');
+                break;
+            case '4':
+                navigate('/handleadd');
+                break;
+            case '5':
+                navigate('/user');
+                break;
+            default:
+                break;
+        }
+    };
+
     return (
         <Layout style={{maxHeight: '100vh'}}>
-            <Sider trigger={null} collapsible collapsed={collapsed}>
+            <Sider trigger={null}>
+                <div className={style.logo_box}>
+                    <span className={style.logo_box_text}>CodePaint <br/> 官网后台管理系统</span>
+                </div>
                 <Menu
                     theme="dark"
                     mode="inline"
                     defaultSelectedKeys={['1']}
+                    onClick={handleClick}
                     items={[
                         {
                             key: '1',
@@ -53,38 +77,21 @@ export default function PageContainer() {
                             key: '5',
                             icon: <UserOutlined/>,
                             label: '个人中心',
-                        },
+                        }
                     ]}
                 />
             </Sider>
             <Layout>
-                <Header
-                    style={{
-                        padding: 0,
-                        background: colorBgContainer,
-                    }}
-                >
-                    <Button
-                        type="text"
-                        icon={collapsed ? <MenuUnfoldOutlined/> : <MenuFoldOutlined/>}
-                        onClick={() => setCollapsed(!collapsed)}
-                        style={{
-                            fontSize: '16px',
-                            width: 64,
-                            height: 64,
-                        }}
-                    />
-                </Header>
                 <Content
                     style={{
                         margin: '24px 16px',
                         padding: 24,
-                        minHeight: '90vh',
+                        height: '100vh',
                         background: colorBgContainer,
                         borderRadius: borderRadiusLG,
                     }}
                 >
-                    Content
+                    <RouteConfig/>
                 </Content>
             </Layout>
         </Layout>
