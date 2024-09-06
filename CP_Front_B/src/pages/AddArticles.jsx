@@ -1,3 +1,7 @@
+import RichEditor from "../components/RichEditor.jsx";
+
 export default function AddArticles() {
-    return <h1>AddArticles</h1>
+    return (
+        <RichEditor/>
+    )
 }
