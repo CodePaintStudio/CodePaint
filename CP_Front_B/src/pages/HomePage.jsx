@@ -30,6 +30,9 @@ const HomePage = () => {
             type: 'category',
             data: ['A', 'B', 'C', 'D', 'E']
         },
+        yAxis: {
+            type: 'value',
+        },
         series: [
             {
                 name: '系列1',
