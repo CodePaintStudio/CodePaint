@@ -4,8 +4,8 @@ import AddArticles from "../pages/AddArticles.jsx";
 import ArticlesCate from "../pages/ArticlesCate.jsx";
 import HandleAdd from "../pages/HandleAdd.jsx";
 import HomePage from "../pages/HomePage.jsx";
-import LoginPage from "../pages/LoginPage.jsx";
 import UserPage from "../pages/UserPage.jsx";
+import LoginPage from "../pages/LoginPage.jsx";
 
 export default function RouteConfig() {
     return (

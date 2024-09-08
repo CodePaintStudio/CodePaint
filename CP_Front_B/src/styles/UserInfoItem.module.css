@@ -1,0 +1,10 @@
+.infoContainer{
+    display: flex;
+    justify-content:space-between;
+    height: 50px;
+}
+
+.left{
+    display: flex;
+    font-weight: 300;
+}

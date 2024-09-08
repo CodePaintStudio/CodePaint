@@ -1,35 +1,32 @@
 import axios from 'axios';
+import {message} from 'antd';
 
-const baseURL = '127.0.0.1:8000'
+const baseURL = 'http://127.0.0.1:3000'
 
-const instance = axios.create({
-    baseURL,
+const request = axios.create({
+    baseURL: baseURL,
     timeout: 10000
 })
 
-instance.interceptors.request.use(
-    (config) => {
-        // Todo:
-        return config
-    },
-    (err) => Promise.reject(err)
-)
-
-instance.interceptors.response.use(
-    (res) => {
-        if (res.data.code === 0) {
-            // Todo:
-            return res
+request.interceptors.response.use(
+    (response) => {
+        const res = response.data;
+        if (res.data.code) {
+            switch (res.data.code) {
+                case 500: {
+                    message.error(res.data.message)
+                    return Promise.reject(res.data.data);
+                }
+                default : {
+                    return res.data
+                }
+            }
         }
-        return Promise.reject(res.data)
+        return res.data
     },
-    (err) => {
-        if (err.response?.status === 401) {
-            // Todo:
-        }
-        return Promise.reject(err)
+    (error) => {
+        console.log("响应拦截出错：", error);
     }
-)
+);
 
-export default instance
-export {baseURL}
+export default request
