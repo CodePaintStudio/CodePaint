@@ -10,3 +10,7 @@ export function maskMiddle(str) {
 
     return firstChar + stars + lastChar;
 }
+
+export function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}

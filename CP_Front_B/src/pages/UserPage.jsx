@@ -1,20 +1,44 @@
 import React, {useState} from 'react';
-import {Avatar, Input, Modal, Button, Card, Form, message} from 'antd';
+import {Avatar, Input, Modal, Button, Card, Form, message, Popconfirm} from 'antd';
 import {EditOutlined} from '@ant-design/icons';
-import {useSelector} from "react-redux";
+import {useSelector, useDispatch} from "react-redux";
+import {updateStoreUserInfo, clearUserInfo} from "../store/userSlice.js";
 import PersonalInfoItem from "../components/UserInfoItem.jsx";
 import UploadImg from "../components/UploadImg.jsx";
-import {maskMiddle} from "../utils/tools";
+import {maskMiddle, sleep} from "../utils/tools";
+import {changePasswordServer} from '../api/user.js'
 
 const UserPage = () => {
-    const userInfo = useSelector(state => state.user.userInfo);
-
     const [open, setOpen] = useState(false);
+    const [passwordInfo, setPasswordInfo] = useState({
+        oldPassword: '',
+        newPassword: '',
+        passwordConfirm: ''
+    });
 
-    const handleOk = () => {
-        setOpen(false)
-        message.success("修改成功")
-    };
+    const userInfo = useSelector(state => state.user.userInfo);
+    const dispatch = useDispatch();
+
+    async function handleOk() {
+        const data = await changePasswordServer({
+            password: passwordInfo.oldPassword,
+            newPassword: passwordInfo.newPassword
+        });
+        dispatch(updateStoreUserInfo(data));
+        message.success("密码修改成功");
+        setOpen(false);
+        sleep(1000).then(() => {
+            dispatch(clearUserInfo());
+            location.reload()
+        })
+    }
+
+    function updatePasswordInfo(value, key) {
+        setPasswordInfo({
+            ...passwordInfo,
+            [key]: value
+        });
+    }
 
     const modal = <>
         <Form
@@ -22,65 +46,81 @@ const UserPage = () => {
             autoComplete="off"
             initialValues={userInfo}
             onFinish={handleOk}
+            labelCol={{span: 5}}
         >
             <Form.Item
                 label="登录密码"
                 name="oldpassword"
                 validateTrigger='onBlur'
+                rules={[
+                    {
+                        required: true,
+                    }
+                ]}
             >
                 <Input.Password
                     rows={6}
-                    // value={passwordInfo.oldpassword}
-                    placeholder="如果要修改密码，请先输入旧密码"
-                    // onChange={(e) => updatePasswordInfo(e.target.value, 'oldpassword')}
+                    value={passwordInfo.oldPassword}
+                    placeholder="请先输入旧密码"
+                    onChange={(e) => updatePasswordInfo(e.target.value, 'oldPassword')}
                 />
             </Form.Item>
 
             <Form.Item
                 label="新密码"
                 name="newpassword"
+                rules={[
+                    {
+                        required: true,
+                    }
+                ]}
             >
                 <Input.Password
                     rows={6}
-                    // value={passwordInfo.newpassword}
+                    value={passwordInfo.newPassword}
                     placeholder="请输入新密码"
-                    // onChange={(e) => updatePasswordInfo(e.target.value, 'newpassword')}
+                    onChange={(e) => updatePasswordInfo(e.target.value, 'newPassword')}
                 />
             </Form.Item>
 
             <Form.Item
                 label="确认密码"
                 name="passwordConfirm"
+                validateTrigger='onBlur'
                 rules={[
+                    {
+                        required: true,
+                    },
                     ({getFieldValue}) => ({
                         validator(_, value) {
                             if (!value || getFieldValue('newpassword') === value) {
                                 return Promise.resolve();
                             }
-                            return Promise.reject(new Error('两次密码不一致'));
+                            return Promise.reject(new Error("两次输入密码不一样"));
                         },
-                    }),
+                    })
                 ]}
-                validateTrigger='onBlur'
             >
                 <Input.Password
                     rows={6}
                     placeholder="请确认密码"
-                    // value={passwordInfo.passwordConfirm}
-                    // onChange={(e) => updatePasswordInfo(e.target.value, 'passwordConfirm')}
+                    value={passwordInfo.passwordConfirm}
+                    onChange={(e) => updatePasswordInfo(e.target.value, 'passwordConfirm')}
                 />
             </Form.Item>
 
             <Form.Item wrapperCol={{offset: 5, span: 16}}>
-                <Button type="primary" htmlType="submit">
-                    确认
-                </Button>
-                <Button type="default" onClick={() => {
-                    setOpen(false)
-                    message.info("取消修改")
-                }}>
-                    取消
-                </Button>
+                <div style={{display: "flex", justifyContent: "space-between"}}>
+                    <Button type="primary" htmlType="submit">
+                        确认
+                    </Button>
+                    <Button type="default" onClick={() => {
+                        setOpen(false)
+                        message.info("已取消修改密码")
+                    }}>
+                        取消
+                    </Button>
+                </div>
             </Form.Item>
         </Form>
     </>
@@ -117,6 +157,30 @@ const UserPage = () => {
                            setOpen(true)
                        }}
                     >修改密码</a>
+
+                    <Popconfirm
+                        title="警告"
+                        description="确认退出登录吗？"
+                        onConfirm={() => {
+                            message.success('退出登陆成功');
+                            dispatch(clearUserInfo());
+                            location.reload();
+                        }}
+                        onCancel={() => {
+                            message.info('已取消退出登录');
+                        }}
+                        okText="是"
+                        cancelText="否"
+                    >
+                        <a href="#"
+                           onClick={(e) => {
+                               e.preventDefault();
+                           }}
+                           style={{
+                               marginLeft: "3vh"
+                           }}
+                        >退出登录</a>
+                    </Popconfirm>
                 </div>
 
             </Card>
@@ -124,6 +188,10 @@ const UserPage = () => {
                 title="修改密码"
                 open={open}
                 footer=''
+                onCancel={() => {
+                    setOpen(false)
+                    message.info("取消修改")
+                }}
             >
                 {modal}
             </Modal>
