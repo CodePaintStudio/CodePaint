@@ -7,7 +7,7 @@ import {useDispatch} from "react-redux";
 import {changeLoginStatus, initUserInfo} from "../store/userSlice.js"
 import BackgroundAnimation from "../components/BackgroundAnimation.jsx";
 
-const LoginPage = ({setIsLogin}) => {
+const LoginPage = () => {
     const [loginInfo, setLoginInfo] = useState({
         username: '',
         password: ''
@@ -16,19 +16,16 @@ const LoginPage = ({setIsLogin}) => {
     const dispatch = useDispatch();
 
     const onFinish = async (values) => {
-        try {
-            const res = await loginServer({
-                username: values.username,
-                password: values.password,
-            })
-            const name = res.data.username
-            const userInfo = await getInfoByNameServer({name: name})
-            dispatch(changeLoginStatus(true));
-            dispatch(initUserInfo(userInfo))
-            message.success('登录成功')
-        } catch (error) {
-            message.error("登录失败", error.message)
-        }
+        const res = await loginServer({
+            username: values.username,
+            password: values.password,
+        })
+        const name = res.data.username;
+        const userInfo = await getInfoByNameServer({name: name})
+        dispatch(changeLoginStatus(true));
+        dispatch(initUserInfo(userInfo));
+        localStorage.setItem('userInfo', JSON.stringify(userInfo));
+        message.success('登录成功')
     };
 
     const handleForgotPassword = () => {
