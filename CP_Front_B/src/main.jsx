@@ -15,7 +15,7 @@ const theme = {
     token: {
         colorPrimary: 'rgb(107, 172, 163)',
         fontFamily: "Koulen",
-        colorError: "rgb(107, 172, 163)"
+        colorError: "rgb(107, 172, 164)"
     },
 };
 
