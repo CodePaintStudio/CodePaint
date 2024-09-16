@@ -11,7 +11,8 @@ export default function App() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        async function checkLoginStatus() {
+        const localInfo = JSON.parse(localStorage.getItem('userInfo'));
+        async function checkLoginStatusFn() {
             const res = await loginServer({
                 username: localInfo.username,
                 password: localInfo.password,
@@ -20,9 +21,9 @@ export default function App() {
             dispatch(initUserInfo(res.data));
         }
 
-        const localInfo = JSON.parse(localStorage.getItem('userInfo'));
+
         if (localInfo) {
-            checkLoginStatus()
+            checkLoginStatusFn()
         }
 
     }, [])

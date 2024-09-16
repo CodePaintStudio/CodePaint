@@ -1,13 +1,12 @@
 import {useNavigate} from 'react-router-dom';
 import RouteConfig from "../router/index.jsx"
 import {
-    CarryOutOutlined,
-    UserOutlined,
-    AppstoreOutlined,
-    LineChartOutlined,
-    EditOutlined
+    CheckCircleFilled,
+    SmileFilled,
+    EditFilled,
+    HomeFilled,
+    BookFilled
 } from '@ant-design/icons';
-
 import {Layout, Menu, theme} from 'antd';
 import * as style from "../styles/PageContainer.module.css"
 
@@ -43,39 +42,42 @@ export default function PageContainer() {
 
     return (
         <Layout style={{maxHeight: '100vh'}}>
-            <Sider trigger={null}>
+            <Sider trigger={null} style={{backgroundColor: colorBgContainer}} width="13vw">
                 <div className={style.logo_box}>
-                    <span className={style.logo_box_text}>CodePaint <br/> 官网后台管理系统</span>
+                    <span className={style.logo_box_text}><h1
+                        style={{display: "inline", fontSize: "3vh"}}>CODEPAINT</h1> <br/> 官网后台管理系统</span>
                 </div>
                 <Menu
-                    theme="dark"
+                    horizontalItemSelectedColor="rgb(107, 172, 163)"
+                    theme="light"
                     mode="inline"
                     defaultSelectedKeys={['1']}
                     onClick={handleClick}
                     items={[
                         {
                             key: '1',
-                            icon: <LineChartOutlined/>,
-                            label: '工作台',
+                            icon: <HomeFilled style={{color: "rgb(107, 172, 163)"}}/>,
+                            label: '首页',
                         },
                         {
                             key: '2',
-                            icon: <AppstoreOutlined/>,
+                            icon: <BookFilled style={{color: "rgb(107, 172, 163)"}}/>,
                             label: '文章管理',
                         },
+
                         {
-                            key: '3',
-                            icon: <EditOutlined/>,
-                            label: '文章发布',
+                            key: "3",
+                            icon: <EditFilled style={{color: "rgb(107, 172, 163)"}}/>,
+                            label: "新增文章"
                         },
                         {
                             key: '4',
-                            icon: <CarryOutOutlined/>,
+                            icon: <CheckCircleFilled style={{color: "rgb(107, 172, 163)"}}/>,
                             label: '申请处理',
                         },
                         {
                             key: '5',
-                            icon: <UserOutlined/>,
+                            icon: <SmileFilled style={{color: "rgb(107, 172, 163)"}}/>,
                             label: '个人中心',
                         }
                     ]}

@@ -1,4 +1,4 @@
-import {createSlice, createAsyncThunk} from "@reduxjs/toolkit";
+import {createSlice} from "@reduxjs/toolkit";
 
 /**
  * 创建切片
@@ -23,7 +23,7 @@ export const userSlice = createSlice({
                 state.userInfo[key] = payload[key];
             }
         },
-        clearUserInfo: (state, {payload}) => {
+        clearUserInfo: (state) => {
             state.userInfo = [];
             localStorage.removeItem("userInfo");
         }
