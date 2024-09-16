@@ -5,7 +5,7 @@ function PersonalInfoItem(props) {
         <div className={styles.infoContainer}>
             <div className={styles.left}>
                 <div>{props.info.itemName}：</div>
-                <div>{props.info.itemValue}</div>
+                <div style={{color: "rgb(107, 172, 163)"}}>{props.info.itemValue}</div>
             </div>
         </div>
     );

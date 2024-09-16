@@ -156,6 +156,7 @@ const UserPage = () => {
                            e.preventDefault();
                            setOpen(true)
                        }}
+                       style={{color: "rgba(107, 172, 163, 0.8)"}}
                     >修改密码</a>
 
                     <Popconfirm
@@ -177,7 +178,8 @@ const UserPage = () => {
                                e.preventDefault();
                            }}
                            style={{
-                               marginLeft: "3vh"
+                               marginLeft: "3vh",
+                               color: "rgba(107, 172, 163, 0.8)"
                            }}
                         >退出登录</a>
                     </Popconfirm>
