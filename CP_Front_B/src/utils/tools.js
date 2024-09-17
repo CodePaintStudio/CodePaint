@@ -14,3 +14,9 @@ export function maskMiddle(str) {
 export function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
+
+export function clearObj (values) {
+    return Object.fromEntries(
+        Object.entries(values).filter(([key, value]) => value)
+    );
+}

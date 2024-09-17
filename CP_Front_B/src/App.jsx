@@ -21,7 +21,6 @@ export default function App() {
             dispatch(initUserInfo(res.data));
         }
 
-
         if (localInfo) {
             checkLoginStatusFn()
         }

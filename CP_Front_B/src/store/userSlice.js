@@ -15,7 +15,6 @@ export const userSlice = createSlice({
         },
         initUserInfo: (state, {payload}) => {
             state.userInfo = payload;
-            console.log("state initUserInfo", payload);
             localStorage.setItem('userInfo', JSON.stringify(payload));
         },
         updateStoreUserInfo: (state, {payload}) => {

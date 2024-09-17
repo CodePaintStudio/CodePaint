@@ -44,8 +44,22 @@ export default function PageContainer() {
         <Layout style={{maxHeight: '100vh'}}>
             <Sider trigger={null} style={{backgroundColor: colorBgContainer}} width="13vw">
                 <div className={style.logo_box}>
-                    <span className={style.logo_box_text}><h1
-                        style={{display: "inline", fontSize: "3vh"}}>CODEPAINT</h1> <br/> 官网后台管理系统</span>
+                    <span
+                        className={style.logo_box_text}
+                        style={{
+                            fontSize: 17,
+                        }}
+                    >
+                        <h1
+                            style={{
+                                display: "inline",
+                                fontSize: 28
+                            }}>
+                            CODEPAINT
+                        </h1>
+                        <br/>
+                        官网后台管理系统
+                    </span>
                 </div>
                 <Menu
                     horizontalItemSelectedColor="rgb(107, 172, 163)"
@@ -83,19 +97,16 @@ export default function PageContainer() {
                     ]}
                 />
             </Sider>
-            <Layout>
-                <Content
-                    style={{
-                        margin: '24px 16px',
-                        padding: 24,
-                        height: '100vh',
-                        background: colorBgContainer,
-                        borderRadius: borderRadiusLG,
-                    }}
-                >
-                    <RouteConfig/>
-                </Content>
-            </Layout>
+            <Content
+                style={{
+                    margin: '24px 16px',
+                    height: 'calc(100vh - 48px)',
+                    background: colorBgContainer,
+                    borderRadius: borderRadiusLG,
+                }}
+            >
+                <RouteConfig/>
+            </Content>
         </Layout>
     );
 };
