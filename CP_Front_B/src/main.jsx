@@ -15,8 +15,17 @@ const theme = {
     token: {
         colorPrimary: 'rgb(107, 172, 163)',
         fontFamily: "Koulen",
-        colorError: "rgb(107, 172, 164)"
+        colorError: "rgb(107, 172, 164)",
+        borderRadiusLG: "1vh",
     },
+    components: {
+        Table: {
+            cellFontSize: "16",
+            headerColor: "#6baca3",
+            headerSplitColor: "rgb(107, 172, 164)",
+            headerBg: "rgba(107, 172, 164, 0.2)",
+        }
+    }
 };
 
 

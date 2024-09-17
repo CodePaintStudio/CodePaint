@@ -173,14 +173,15 @@ const UserPage = () => {
                         okText="是"
                         cancelText="否"
                     >
-                        <a href="#"
-                           onClick={(e) => {
-                               e.preventDefault();
-                           }}
-                           style={{
-                               marginLeft: "3vh",
-                               color: "rgba(107, 172, 163, 0.8)"
-                           }}
+                        <a
+                            href="#"
+                            onClick={(e) => {
+                                e.preventDefault();
+                            }}
+                            style={{
+                                marginLeft: "3vh",
+                                color: "rgba(107, 172, 163, 0.8)"
+                            }}
                         >退出登录</a>
                     </Popconfirm>
                 </div>
