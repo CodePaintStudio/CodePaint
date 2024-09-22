@@ -28,8 +28,9 @@ function HomePage() {
         </div>
       </section>
       {/* 首页主要内容 */}
-      <section>
-        <div ref={contentRef} style={{ height: '100vh' }}>
+      <section className={styles.mainArea}>
+        <div ref={contentRef} style={{ height: '120vh' }} className={styles.mainContainer}>
+          <div className={styles.mainTitle} />
           <NavHeader />
         </div>
       </section>
