@@ -71,9 +71,12 @@
 
 .mainArea{
     display: flex;
+    height: 143.021vw;
+    padding: 0;
     background-image: url("../images/general/generalBackground.webp");
     background-size: cover;
     justify-content: center;
+    scroll-snap-align: start;
 }
 
 .mainTitle{
@@ -87,8 +90,89 @@
 
 .mainContainer{
     display: flex;
-    width: 50%;
+    /*max-width: 70%;*/
     justify-content: center;
     align-content: flex-start;
     flex-wrap: wrap;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+
+
+.introContainer{
+    display: flex;
+    width: 84.896vw;
+    height: 115.625vw;
+    position: relative;
+    background-color: #fff;
+    justify-content: center;
+    margin-top: -0.531vw;
+
+    /*z-index: 2;*/
+}
+
+.subTitle{
+    position: absolute;
+    top: 3.75vw;
+    width: 48.646vw;
+    height: 3.646vw;
+    background-image: url("../images/homepage/sub-title.webp");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.carousel{
+    position: absolute;
+    top: 10vw;
+    width: 77.34375vw;
+    height: 22.96875vw;
+    /*--swiper-pagination-color: #68a69f;*/
+    :global(.swiper-pagination-bullet-active) {
+        background-color: #68a69f;
+    }
+    :global(.swiper-pagination-bullet) {
+        width: 0.9375vw;
+        height: 0.46875vw;
+        border-radius: 0.6vw;
+    }
+}
+
+.previousBtn{
+    position: absolute;
+    width: 5.417vw;
+    height: 5.104vw;
+    left: 5.521vw;
+    top: 18.385vw;
+    cursor: pointer;
+    background-image: url("../images/homepage/navigate_prev.webp");
+    background-size: contain;
+    z-index: 10;
+}
+
+.nextBtn{
+    position: absolute;
+    width: 5.417vw;
+    height: 5.104vw;
+    left: 74.792vw;
+    top: 18.385vw;
+    cursor: pointer;
+    background-image: url("../images/homepage/navigate_next.webp");
+    background-size: contain;
+    z-index: 10;
+}
+
+.swiper-pagination-bullet-active {
+    background: #68a69f; /* 修改选中时的颜色 */
+}
+
+.mainImage{
+    position: absolute;
+    top: 40.365vw;
+    width: 77.34375vw;
+    height: 35.677vw;
+    background-image: url("../images/homepage/homeBg.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
