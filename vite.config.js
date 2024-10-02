@@ -5,4 +5,12 @@ import react from '@vitejs/plugin-react';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  server: {
+    proxy: {
+      '/article': {
+        target: '47.109.193.161:6677',
+        changeOrigin: true,
+      },
+    },
+  },
 });

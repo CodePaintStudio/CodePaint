@@ -79,8 +79,7 @@
 }
 
 
-
-.previousBtn{
+.swiperUnpack.previousBtn{
     position: absolute;
     width: 5.417vw;
     height: 5.104vw;
@@ -92,7 +91,7 @@
     z-index: 10;
 }
 
-.nextBtn{
+.swiperUnpack.nextBtn{
     position: absolute;
     width: 5.417vw;
     height: 5.104vw;
@@ -104,22 +103,54 @@
     z-index: 10;
 }
 
+.swiperHistory.previousBtn{
+    position: absolute;
+    width: 5.417vw;
+    height: 5.104vw;
+    left: 1.40625vw;
+    top: 88.125vw;
+    cursor: pointer;
+    background-image: url("../images/homepage/navigate_prev.webp");
+    background-size: contain;
+    z-index: 10;
+}
+
+.swiperHistory.nextBtn{
+    position: absolute;
+    width: 5.417vw;
+    height: 5.104vw;
+    left: 78.333vw;
+    top: 88.125vw;
+    cursor: pointer;
+    background-image: url("../images/homepage/navigate_next.webp");
+    background-size: contain;
+    z-index: 10;
+}
+
 .titleUnpacking{
     position: absolute;
     top: 12.708vw;
-    width: 33.021vw;
+    width: 40.021vw;
     height: 2.552vw;
-    background-image: url("../images/activity/upcoming_events.webp");
-    background-size: cover;
+    font-family: "Inter 28pt",sans-serif;
+    text-align: center;
+    font-size: 3.333vw;
+    font-weight: 800;
+    /*background-image: url("../images/activity/upcoming_events.webp");*/
+    /*background-size: cover;*/
 }
 
 .titleUnpackingCn{
     position: absolute;
     top: 17.5vw;
-    width: 8.177vw;
+    width: 8.533vw;
     height: 1.979vw;
-    background-image: url("../images/activity/upcoming_cn.webp");
-    background-size: cover;
+    font-family: "Inter 28pt",sans-serif;
+    text-align: center;
+    font-size: 2.083vw;
+    font-weight: 900;
+    /*background-image: url("../images/activity/upcoming_cn.webp");*/
+    /*background-size: cover;*/
 }
 
 .titleHistory{
@@ -127,15 +158,23 @@
     top: 65.365vw;
     width: 40.729vw;
     height: 2.552vw;
-    background-image: url("../images/activity/history_activities.webp");
-    background-size: contain;
+    font-family: "Inter 28pt",sans-serif;
+    text-align: center;
+    font-size: 3.333vw;
+    font-weight: 800;
+    /*background-image: url("../images/activity/history_activities.webp");*/
+    /*background-size: contain;*/
 }
 
 .titleHistoryCn{
     position: absolute;
     top: 70.3125vw;
-    width: 8.177vw;
+    width: 8.5vw;
     height: 1.979vw;
-    background-image: url("../images/activity/history_cn.webp");
-    background-size: cover;
+    font-family: "Inter 28pt",sans-serif;
+    text-align: center;
+    font-size: 2.083vw;
+    font-weight: 900;
+    /*background-image: url("../images/activity/history_cn.webp");*/
+    /*background-size: cover;*/
 }

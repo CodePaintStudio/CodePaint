@@ -1,20 +1,19 @@
 import React, { useRef } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from 'swiper/modules';
 import NavHeader from '../components/NavHeader';
 import styles from '../styles/homepage.module.css';
 import 'swiper/css';
-import 'swiper/css/pagination'
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay, Pagination } from 'swiper/modules';
+import 'swiper/css/pagination';
 
 function HomePage() {
   const contentRef = useRef(null);
   const swiperRef = useRef(null);
   const imagesItems = [
-    '../src/images/homepage/homeBg.webp',
-    '../src/images/homepage/homeBg.webp',
-    '../src/images/homepage/homeBg.webp',
-    '../src/images/homepage/homeBg.webp',
-    '../src/images/homepage/homeBg.webp',
+    '../src/images/homepage/home_background.webp',
+    '../src/images/homepage/home_background.webp',
+    '../src/images/homepage/home_background.webp',
+    '../src/images/homepage/home_background.webp',
   ];
 
   function handleScroll() {
@@ -49,7 +48,7 @@ function HomePage() {
             <div className={styles.subTitle} />
             <Swiper
               loop
-              navigation={{nextEl: '.custom-next', prevEl: '.custom-prev'}}
+              navigation={{ nextEl: '.custom-next', prevEl: '.custom-prev' }}
               spaceBetween={50}
               slidesPerView={1}
               className={styles.carousel}

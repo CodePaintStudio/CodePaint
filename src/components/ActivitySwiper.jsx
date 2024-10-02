@@ -1,10 +1,12 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import styles from '../styles/activity.module.css';
 import { Autoplay, Pagination } from 'swiper/modules';
+import { useNavigate } from 'react-router-dom';
 
 function ActivitySwiper(props) {
   const swiperRef = useRef(null);
+  const navigate = useNavigate();
   return (
     <>
       <Swiper
@@ -20,13 +22,17 @@ function ActivitySwiper(props) {
         autoplay={{ delay: 2500, disableOnInteraction: false }}
       >
         {props.imagesItems.map((image, index) => (
-          <SwiperSlide key={index}>
-            <img src={image} alt={`Slide ${index}`} />
+          <SwiperSlide
+            style={{ cursor: 'pointer' }}
+            key={`${props.customClass}${image.id}`}
+            onClick={() => navigate(`/activity/detail?id=${image.id}`)}
+          >
+            <img src={image.image} alt={`Slide ${index}`} />
           </SwiperSlide>
         ))}
       </Swiper>
       <div
-        className={styles.previousBtn}
+        className={`${styles.previousBtn} ${props.customClass}`}
         onClick={() => swiperRef.current.slidePrev()}
         onKeyDown={() => swiperRef.current.slidePrev()}
         aria-label="click to previous"
@@ -34,7 +40,7 @@ function ActivitySwiper(props) {
         tabIndex="-1"
       />
       <div
-        className={styles.nextBtn}
+        className={`${styles.nextBtn} ${props.customClass}`}
         onClick={() => swiperRef.current.slideNext()}
         onKeyDown={() => swiperRef.current.slidePrev()}
         aria-label="click to next"

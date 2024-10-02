@@ -1,0 +1,51 @@
+.mainContainer{
+    display: flex;
+    height: 143.021vw;
+    /*max-width: 70%;*/
+    justify-content: center;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    background-image: url("../images/general/generalBackground.webp");
+    background-size: cover;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.mainTitle{
+    width: 26.354vw;
+    height: 11.302vw;
+    background-image: url("../images/general/codePaint.webp");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.introContainer{
+    display: flex;
+    width: 84.896vw;
+    height: 115.625vw;
+    position: relative;
+    background-color: #fff;
+    justify-content: center;
+    margin-top: -0.531vw;
+
+    /*z-index: 2;*/
+}
+
+.subTitle{
+    position: absolute;
+    top: 3.75vw;
+    width: 48.646vw;
+    height: 3.646vw;
+    background-image: url("../images/blog/subtitle.webp");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.searchBarContainer{
+    position: absolute;
+    top: 10.15625vw;
+    width: 45.833vw;
+    height: 4.479vw;
+}
