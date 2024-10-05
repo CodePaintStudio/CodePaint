@@ -1,3 +1,21 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('../font/Inter-Regular.woff2') format('woff2'),
+    url('../font/Inter-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter 28pt';
+    src: url('../font/Inter28pt-Black.woff2') format('woff2'),
+    url('../font/Inter28pt-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
 .mainContainer{
     display: flex;
     height: 143.021vw;
@@ -70,27 +88,50 @@
     /*background-size: cover;*/
 }
 
-@font-face {
-    font-family: 'Inter';
-    src: url('../font/Inter-Regular.woff2') format('woff2'),
-    url('../font/Inter-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+.titleContact{
+    position: absolute;
+    top: 10.573vw;
+    width: 33.021vw;
+    height: 2.552vw;
+    font-family: "Inter 28pt",sans-serif;
+    text-align: center;
+    font-size: 3.333vw;
+    font-weight: 800;
+    /*background-image: url("../images/activity/upcoming_events.webp");*/
+    /*background-size: cover;*/
 }
 
-@font-face {
-    font-family: 'Inter 28pt';
-    src: url('../font/Inter28pt-Black.woff2') format('woff2'),
-    url('../font/Inter28pt-Black.woff') format('woff');
+.titleContactCn{
+    position: absolute;
+    top: 15.208vw;
+    width: 10.177vw;
+    height: 1.979vw;
+    font-family: "Inter 28pt",sans-serif;
     font-weight: 900;
-    font-style: normal;
-    font-display: swap;
+    font-size: 2.5vw;
+    text-align: center;
+    /*background-image: url("../images/activity/upcoming_cn.webp");*/
+    /*background-size: cover;*/
 }
 
 .feedback{
     position: absolute;
     top: 68.333vw;
     width: 75vw;
+    height: 75vw;
 }
 
+.subTitleJoin{
+    width: 48.646vw;
+    height: 3.646vw;
+    background-image: url("../images/joinus/subtitle.webp");
+}
+
+.QRCode{
+    position: absolute;
+    width: 16.042vw;
+    height: 16.042vw;
+    background-color: #b9dad7;
+    top: 21.40625vw;
+    left: 14.375vw;
+}

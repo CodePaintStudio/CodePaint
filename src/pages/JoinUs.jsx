@@ -7,11 +7,23 @@ import { deepPurple, grey } from '@mui/material/colors';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import NavHeader from '../components/NavHeader';
 import styles from '../styles/joinus.module.css';
+import SendIcon from '@mui/icons-material/Send';
+import Button from '@mui/material/Button';
+import { sendFeedback } from '../api/joinus';
+import ContactInfo from '../components/ContactInfo';
 
 function JoinUs(props) {
   const [type, setType] = useState('');
   const [contact, setContact] = useState('');
   const [feedbackContent, setFeedbackContent] = useState('');
+
+  function handleSend(){
+    sendFeedback({
+      content:feedbackContent,
+      type:type,
+      contact:contact,
+    });
+  }
 
   return (
     <div className={styles.mainContainer}>
@@ -19,11 +31,17 @@ function JoinUs(props) {
         <div className={styles.mainTitle} />
         <NavHeader activeIndex={4} />
         <div className={styles.introContainer}>
-          <div className={styles.subTitle} />
-          {/* 信息填写部分暂时留空 */}
+          <div className={styles.subTitle}/>
+          {/* 信息展示部分 */}
+          <div className={styles.titleContact}>CONTACT US</div>
+          <div className={styles.titleContactCn}>联系我们</div>
+          <Box className={styles.QRCode}>
+            <img src='../src/images/joinus/qrcode.svg' alt=''/>
+          </Box>
+          <ContactInfo/>
+          {/* 反馈填写 */}
           <div className={styles.titleFeedback}>FEEDBACK</div>
           <div className={styles.titleFeedbackCn}>反馈</div>
-          {/* 反馈填写 */}
           <FormControl className={styles.feedback}>
             {/* 类型选择 */}
             <Box display="flex" alignItems="center" marginBottom="3.229vw" height="3.958vw">
@@ -172,7 +190,7 @@ function JoinUs(props) {
             </Typography>
             <TextField
               autoComplete="email"
-              onChange={(e) => setContact(e.target.value)}
+              onChange={(e) => setFeedbackContent(e.target.value)}
               sx={{
                 width: '75vw',
                 height: '23.4375vw',
@@ -194,6 +212,9 @@ function JoinUs(props) {
                 },
               }}
             />
+            <Button variant="contained" endIcon={<SendIcon/>} onClick={handleSend}>
+              Send
+            </Button>
           </FormControl>
         </div>
       </div>
