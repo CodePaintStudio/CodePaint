@@ -7,6 +7,7 @@ import UI from '../pages/UI';
 import Blog from '../pages/Blog';
 import JoinUs from '../pages/JoinUs';
 import ActivityDetail from '../components/ActivityDetail';
+import BlogDetail from '../components/BlogDetail';
 
 export default function RouteConfig() {
   return (
@@ -14,6 +15,7 @@ export default function RouteConfig() {
       <Route path="/home" element={<HomePage />} />
       <Route path="/activity" element={<Activity />} />
       <Route path="/activity/detail" element={<ActivityDetail />} />
+      <Route path="/frontEndBlog/detail/:id" element={<BlogDetail />} />
       <Route path="/UI" element={<UI />} />
       <Route path="/frontEndBlog" element={<Blog />} />
       <Route path="/joinus" element={<JoinUs />} />

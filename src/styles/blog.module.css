@@ -1,17 +1,19 @@
-.mainContainer{
-    display: flex;
-    height: 143.021vw;
-    /*max-width: 70%;*/
-    justify-content: center;
-    align-content: flex-start;
-    flex-wrap: wrap;
+.pageWrapper {
+    min-height: 100vh;
     background-image: url("../images/general/generalBackground.webp");
     background-size: cover;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+    background-repeat: repeat-y;
 }
 
-.mainTitle{
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+}
+
+.mainTitle {
     width: 26.354vw;
     height: 11.302vw;
     background-image: url("../images/general/codePaint.webp");
@@ -20,32 +22,37 @@
     background-position: center;
 }
 
-.introContainer{
+.introContainer {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 84.896vw;
-    height: 115.625vw;
-    position: relative;
+    min-height: 115.625vw;
     background-color: #fff;
-    justify-content: center;
     margin-top: -0.531vw;
-
-    /*z-index: 2;*/
+    padding: 3.75vw 0 5vw 0;
+    position: relative;
 }
 
-.subTitle{
-    position: absolute;
-    top: 3.75vw;
+.subTitle {
     width: 48.646vw;
     height: 3.646vw;
     background-image: url("../images/blog/subtitle.webp");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    margin-bottom: 2.75vw;
 }
 
-.searchBarContainer{
-    position: absolute;
-    top: 10.15625vw;
+.searchBarContainer {
     width: 45.833vw;
     height: 4.479vw;
+    margin-bottom: 9.32275vw;
+}
+
+.blogContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
 }
