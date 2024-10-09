@@ -13,22 +13,13 @@ function Blog(props) {
   const [noMoreData, setNoMoreData] = useState(false);
   const loaderRef = useRef(null);
 
-  useEffect(() => {
-    async function fetchData() {
-      const data = await getAllArticle();
-      setBlogs(data);
-      loadMoreBlogs(data);
-    }
-    fetchData();
-  }, []);
 
   const updateDisplayedBlog = function (data){
     setIsLoading(true);
-    setDisplayedBlogs(prevBlogs => {
+    setDisplayedBlogs((prevBlogs) => {
       const currentLength = prevBlogs.length;
       const nextBlogs = data.slice(currentLength, currentLength + 8);
       const newBlogs = [...prevBlogs, ...nextBlogs];
-      console.log(`Current: ${currentLength}, Next: ${nextBlogs.length}, Total: ${newBlogs.length}, Data length: ${data.length}`);
 
       if (newBlogs.length >= data.length) {
         setNoMoreData(true);
@@ -37,11 +28,21 @@ function Blog(props) {
       setIsLoading(false);
       return newBlogs;
     });
-  }
+    // console.log(displayedBlogs);
+  };
 
   const loadMoreBlogs = useCallback((data = blogs) => {
     updateDisplayedBlog(data);
   }, [blogs]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const data = await getAllArticle();
+      setBlogs(data);
+      loadMoreBlogs(data);
+    }
+    fetchData();
+  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -94,6 +95,7 @@ function Blog(props) {
                 title={blog.articleTitle}
                 image={blog.articleImgUrl}
                 id={blog.articleId}
+                info={blog.articleInfo}
               />
             ))}
           </div>

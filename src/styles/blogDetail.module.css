@@ -56,7 +56,15 @@
 
 .content{
     display: flex;
+    flex-wrap: wrap;
+    width: 70%;
     justify-content: center;
     position: absolute;
     top: 15.573vw;
+}
+
+.blockquote{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
 }

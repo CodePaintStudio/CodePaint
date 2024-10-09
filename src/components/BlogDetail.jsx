@@ -1,28 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getArticleById } from '../api/article';
-import parse from 'html-react-parser';
 import styles from '../styles/blogDetail.module.css';
 import NavHeader from './NavHeader';
-import SearchBar from './SearchBar';
-import BlogItem from './BlogItem';
-import { Typography } from '@mui/material';
+import { Typography, Box } from '@mui/material';
+import ArticleContentParse from './ArticleContentParse'; // 导入新组件
 
-function BlogDetail(props) {
+function BlogDetail() {
   const { id } = useParams();
   const [articleContent, setArticleContent] = useState('');
-  const [articleValue,setArticleValue] = useState({});
+  const [articleValue, setArticleValue] = useState({});
   const navigate = useNavigate();
 
   useEffect(() => {
     async function fetchData() {
       const data = await getArticleById(id);
-      const content = parse(data[0].articleContent);
-      setArticleContent(content);
+      setArticleContent(data[0].articleContent);
       setArticleValue(data[0]);
     }
     fetchData();
   }, [id]);
+
   return (
     <div className={styles.pageWrapper}>
       <div className={styles.mainContainer}>
@@ -32,12 +30,15 @@ function BlogDetail(props) {
           <div
             className={`${styles.backButton}`}
             onClick={() => navigate('/frontEndBlog')}
-            onKeyDown={() => navigate('/frontEndBlog')}
+            onKeyDown={(e) => e.key === 'Enter' && navigate('/frontEndBlog')}
             aria-label="click to previous"
             role="button"
-            tabIndex="-1"
+            tabIndex="0"
           />
           <Typography
+            variant="h3"
+            component="h1"
+            gutterBottom
             sx={{
               fontSize: '2.083vw',
             }}
@@ -46,6 +47,7 @@ function BlogDetail(props) {
             {articleValue.articleTitle}
           </Typography>
           <Typography
+            variant="subtitle1"
             sx={{
               fontSize: '1.5625vw',
               color: '#838383',
@@ -54,9 +56,9 @@ function BlogDetail(props) {
           >
             {articleValue.articleAuthor}
           </Typography>
-          <div className={styles.content}>
-            {articleContent}
-          </div>
+          <Box className={styles.content}>
+            <ArticleContentParse content={articleContent} />
+          </Box>
         </div>
       </div>
     </div>

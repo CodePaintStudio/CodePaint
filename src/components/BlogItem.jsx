@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 
 const baseURL = 'http://47.109.193.161:6677/';
 
-function BlogItem({ title, image, id }) {
+function BlogItem({ title, image, id, info }) {
   // console.log(`${baseURL}${image}`);
   const navigate = useNavigate();
   return (
@@ -45,7 +45,7 @@ function BlogItem({ title, image, id }) {
           </Typography>
           <Typography variant="body2" fontSize="1.042vw" color="#838383" width="29.21875vw">
             {/* {content.length > 100 ? `${content.substring(0, 100)}...` : content} */}
-            大概两年以前，面试美团的时候，面试官让我写一道代码题，时间单位转换。具体的题目我忘记了。 原题目我没做过，但是我写的业务代码代码里有类似的单位转换...
+            {info}
           </Typography>
         </CardContent>
       </CardActionArea>
