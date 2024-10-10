@@ -8,13 +8,13 @@ export default defineConfig({
   server: {
     proxy: {
       '/article': {
-        target: '47.109.193.161:6677',
+        target: 'http://47.109.193.161:3543',
         changeOrigin: true,
       },
       '/details': {
-        target: 'http://47.109.193.161:6677',
+        target: 'http://47.109.193.161:3543',
         changeOrigin: true,
-      }
+      },
     },
   },
 });

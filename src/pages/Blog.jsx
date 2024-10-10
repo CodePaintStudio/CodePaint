@@ -1,20 +1,20 @@
-import React, { useEffect, useRef, useState, useCallback } from 'react';
+import React, {
+  useEffect, useRef, useState, useCallback,
+} from 'react';
 import styles from '../styles/blog.module.css';
 import NavHeader from '../components/NavHeader';
 import SearchBar from '../components/SearchBar';
 import BlogItem from '../components/BlogItem';
 import { getAllArticle } from '../api/article';
 
-function Blog(props) {
+function Blog() {
   const [searchKey, setSearchKey] = useState('');
   const [blogs, setBlogs] = useState([]);
   const [displayedBlogs, setDisplayedBlogs] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [noMoreData, setNoMoreData] = useState(false);
   const loaderRef = useRef(null);
-
-
-  const updateDisplayedBlog = function (data){
+  const updateDisplayedBlog = (data) => {
     setIsLoading(true);
     setDisplayedBlogs((prevBlogs) => {
       const currentLength = prevBlogs.length;
@@ -56,7 +56,7 @@ function Blog(props) {
         root: null,
         rootMargin: '0px',
         threshold: 0.1,
-      }
+      },
     );
 
     if (loaderRef.current) {
@@ -85,7 +85,7 @@ function Blog(props) {
             <SearchBar
               searchKey={searchKey}
               setSearchKey={setSearchKey}
-              handleSearch={handleSearch}
+              handleSearch={() => handleSearch}
             />
           </div>
           <div className={styles.blogContainer}>
@@ -99,7 +99,7 @@ function Blog(props) {
               />
             ))}
           </div>
-          {!noMoreData && <div ref={loaderRef} style={{ marginTop:'2.604vw', height: '20px' }}></div>}
+          {!noMoreData && <div ref={loaderRef} style={{ marginTop: '2.604vw', height: '20px' }}></div>}
           {isLoading && <div>正在加载更多文章...</div>}
           {noMoreData && <div>没有更多文章了</div>}
         </div>

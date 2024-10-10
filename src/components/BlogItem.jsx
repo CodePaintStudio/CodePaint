@@ -4,7 +4,7 @@ import {
 } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 
-const baseURL = 'http://47.109.193.161:6677/';
+const baseURL = 'http://47.109.193.161:3543/';
 
 function BlogItem({ title, image, id, info }) {
   // console.log(`${baseURL}${image}`);

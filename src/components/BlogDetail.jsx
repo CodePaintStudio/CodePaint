@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import { Typography, Box } from '@mui/material';
 import { getArticleById } from '../api/article';
 import styles from '../styles/blogDetail.module.css';
 import NavHeader from './NavHeader';
-import { Typography, Box } from '@mui/material';
 import ArticleContentParse from './ArticleContentParse'; // 导入新组件
 
 function BlogDetail() {
@@ -17,6 +17,7 @@ function BlogDetail() {
       const data = await getArticleById(id);
       setArticleContent(data[0].articleContent);
       setArticleValue(data[0]);
+      // console.log(data[0]);
     }
     fetchData();
   }, [id]);
