@@ -8,7 +8,7 @@ function Activity(props) {
   const [activity, setActivity] = useState([]);
   const [upcomingList, setUpcomingList] = useState([]);
   const [pastList, setPastList] = useState([]);
-  const baseURL = 'http://47.109.193.161:6677/';
+  const baseURL = 'http://47.109.193.161:3543/';
   // let imagesItems = [
   //   // '../src/images/homepage/home_background.webp',
   //   // '../src/images/homepage/home_background.webp',
