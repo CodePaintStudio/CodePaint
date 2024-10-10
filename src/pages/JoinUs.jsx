@@ -1,55 +1,63 @@
 import React, { useState } from 'react';
 import {
-  FormControl, MenuItem, InputLabel, menuClasses, Typography, Box, Input, TextField,
+  FormControl, MenuItem, menuClasses, Typography, Box, TextField,
 } from '@mui/material';
 import Select, { selectClasses } from '@mui/material/Select';
-import { deepPurple, grey } from '@mui/material/colors';
+import { grey } from '@mui/material/colors';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import NavHeader from '../components/NavHeader';
-import styles from '../styles/joinus.module.css';
 import SendIcon from '@mui/icons-material/Send';
 import Button from '@mui/material/Button';
+import NavHeader from '../components/NavHeader';
+import styles from '../styles/joinus.module.css';
 import { sendFeedback } from '../api/joinus';
 import ContactInfo from '../components/ContactInfo';
 
-function JoinUs(props) {
+function JoinUs() {
   const [type, setType] = useState('');
   const [contact, setContact] = useState('');
   const [feedbackContent, setFeedbackContent] = useState('');
 
-  function handleSend(){
+  function handleSend() {
+    if (!feedbackContent || !type) {
+      return;
+    }
     sendFeedback({
-      content:feedbackContent,
-      type:type,
-      contact:contact,
+      content: feedbackContent,
+      type,
+      contact,
     });
   }
 
   return (
-    <div className={styles.mainContainer}>
-      <div style={{ height: '154.25926vh' }} className={styles.mainContainer}>
+    <div className={styles.pageWrapper}>
+      <div className={styles.mainContainer}>
         <div className={styles.mainTitle} />
         <NavHeader activeIndex={4} />
         <div className={styles.introContainer}>
-          <div className={styles.subTitle}/>
+          <div className={styles.subTitle} />
           {/* 信息展示部分 */}
           <div className={styles.titleContact}>CONTACT US</div>
           <div className={styles.titleContactCn}>联系我们</div>
           <Box className={styles.QRCode}>
-            <img src='../src/images/joinus/qrcode.svg' alt=''/>
+            <img src="../src/images/joinus/qrcode.svg" alt="QQ交流群二维码" />
           </Box>
-          <ContactInfo/>
+          <ContactInfo />
           {/* 反馈填写 */}
           <div className={styles.titleFeedback}>FEEDBACK</div>
           <div className={styles.titleFeedbackCn}>反馈</div>
-          <FormControl className={styles.feedback}>
+          <FormControl
+            className={styles.feedback}
+            sx={{
+              height: '45vw !important',
+            }}
+          >
             {/* 类型选择 */}
             <Box display="flex" alignItems="center" marginBottom="3.229vw" height="3.958vw">
               <Typography
                 variant="subtitle1"
                 sx={{
                   fontFamily: 'Inter',
-                  fontSize: '1.875vw',
+                  fontSize: '1.775vw',
                   marginRight: '1.875vw',
                 }}
               >
@@ -143,8 +151,9 @@ function JoinUs(props) {
               <Typography
                 variant="subtitle1"
                 sx={{
+                  width: '15vw',
                   fontFamily: 'Inter',
-                  fontSize: '1.875vw',
+                  fontSize: '1.775vw',
                   marginRight: '1.875vw',
                 }}
               >
@@ -181,7 +190,7 @@ function JoinUs(props) {
               variant="subtitle1"
               sx={{
                 fontFamily: 'Inter',
-                fontSize: '1.875vw',
+                fontSize: '1.775vw',
                 marginRight: '1.875vw',
                 marginTop: '4.896vw',
               }}
@@ -192,11 +201,11 @@ function JoinUs(props) {
               autoComplete="email"
               onChange={(e) => setFeedbackContent(e.target.value)}
               sx={{
-                width: '75vw',
+                // width: '75vw',
                 height: '23.4375vw',
                 backgroundColor: '#202020',
                 borderRadius: '1.042vw',
-                fontSize: '1.875vw',
+                fontSize: '1.775vw',
                 fontFamily: 'Inter',
                 '& .MuiOutlinedInput-notchedOutline': {
                   border: 'none',
@@ -212,7 +221,19 @@ function JoinUs(props) {
                 },
               }}
             />
-            <Button variant="contained" endIcon={<SendIcon/>} onClick={handleSend}>
+            <Button
+              variant="contained"
+              endIcon={<SendIcon />}
+              onClick={() => handleSend()}
+              sx={{
+                width: '20%',
+                marginTop: '1.221vw',
+                marginLeft: '80%',
+                backgroundColor: '#202020',
+                color: '#FFF',
+                borderRadius: '0.7vw',
+              }}
+            >
               Send
             </Button>
           </FormControl>
