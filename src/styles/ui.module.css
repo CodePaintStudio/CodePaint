@@ -1,0 +1,78 @@
+.mainContainer{
+    display: flex;
+    height: 143.021vw;
+    /*max-width: 70%;*/
+    justify-content: center;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    background-image: url("../images/general/generalBackground.webp");
+    background-size: cover;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.mainTitle{
+    width: 26.354vw;
+    height: 11.302vw;
+    background-image: url("../images/general/codePaint.webp");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.introContainer{
+    display: flex;
+    width: 84.896vw;
+    height: 115.625vw;
+    position: relative;
+    background-color: #fff;
+    justify-content: center;
+    margin-top: -0.631vw;
+
+    /*z-index: 2;*/
+}
+
+.subTitle{
+    position: absolute;
+    top: 3.75vw;
+    width: 48.646vw;
+    height: 3.646vw;
+    background-image: url("../images/ui_works/subtitle.webp");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.titleWorkCase{
+    position: absolute;
+    top: 13.4375vw;
+    width: 20.573vw;
+    height: 2.552vw;
+    background-image: url("../images/ui_works/work_case.webp");
+    background-size: cover;
+}
+
+.titleWorkCaseCn{
+    position: absolute;
+    top: 17.917vw;
+    width: 8.229vw;
+    height: 1.979vw;
+    background-image: url("../images/ui_works/work_case_cn.webp");
+    background-size: contain;
+}
+
+.searchBarContainer{
+    position: absolute;
+    top: 22.604vw;
+    width: 45.833vw;
+    height: 4.479vw;
+}
+
+form.searchBar{
+    width: 100%;
+}
+
+.works{
+    position: absolute;
+    top:32.1875vw;
+}

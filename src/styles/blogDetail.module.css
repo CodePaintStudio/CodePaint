@@ -1,0 +1,70 @@
+.mainContainer{
+    display: flex;
+    height: 143.021vw;
+    /*max-width: 70%;*/
+    justify-content: center;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    background-image: url("../images/general/generalBackground.webp");
+    background-size: cover;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+.mainTitle{
+    width: 26.354vw;
+    height: 11.302vw;
+    background-image: url("../images/general/codePaint.webp");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.introContainer{
+    display: flex;
+    width: 84.896vw;
+    height: 115.625vw;
+    position: relative;
+    background-color: #fff;
+    justify-content: center;
+    margin-top: -0.631vw;
+
+    /*z-index: 2;*/
+}
+
+.backButton{
+    background-image: url("../images/general/back_button.webp");
+    position: absolute;
+    background-size: contain;
+    width: 4.115vw;
+    height: 4.115vw;
+    top: 2.917vw;
+    left: 3.125vw;
+}
+
+.articleTitle{
+    position: absolute;
+    left: 3.125vw;
+    top: 9.167vw;
+}
+
+.author{
+    position: absolute;
+    left: 3.125vw;
+    top: 12.76vw;
+}
+
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    width: 70%;
+    justify-content: center;
+    position: absolute;
+    top: 15.573vw;
+}
+
+.blockquote{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
