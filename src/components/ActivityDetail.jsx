@@ -27,12 +27,13 @@ function ActivityDetail() {
     <div className={styles.pageWrapper}>
       <div className={styles.mainContainer}>
         <div className={styles.mainTitle} />
-        <NavHeader activeIndex={3} />
+        <NavHeader activeIndex={1} />
         <div className={styles.introContainer}>
           <div
             className={`${styles.backButton}`}
-            onClick={() => navigate('/frontEndBlog')}
-            onKeyDown={(e) => e.key === 'Enter' && navigate('/frontEndBlog')}
+            onClick={() => navigate('/activity')}
+            style={{ cursor: 'pointer' }}
+            onKeyDown={(e) => e.key === 'Enter' && navigate('/activity')}
             aria-label="click to previous"
             role="button"
             tabIndex="0"

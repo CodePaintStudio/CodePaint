@@ -31,6 +31,7 @@ function BlogDetail() {
           <div
             className={`${styles.backButton}`}
             onClick={() => navigate('/frontEndBlog')}
+            style={{ cursor: 'pointer' }}
             onKeyDown={(e) => e.key === 'Enter' && navigate('/frontEndBlog')}
             aria-label="click to previous"
             role="button"

@@ -14,13 +14,16 @@ function Blog() {
   const [isLoading, setIsLoading] = useState(false);
   const [noMoreData, setNoMoreData] = useState(false);
   const loaderRef = useRef(null);
-  const updateDisplayedBlog = (data) => {
+  const [isSearched, setIsSearched] = useState(false);
+  const [searchedList, setSearchedList] = useState([]);
+
+  const loadMoreBlogs = useCallback((data = blogs) => {
     setIsLoading(true);
     setDisplayedBlogs((prevBlogs) => {
       const currentLength = prevBlogs.length;
       const nextBlogs = data.slice(currentLength, currentLength + 8);
       const newBlogs = [...prevBlogs, ...nextBlogs];
-
+      // console.log(data);
       if (newBlogs.length >= data.length) {
         setNoMoreData(true);
       }
@@ -29,10 +32,6 @@ function Blog() {
       return newBlogs;
     });
     // console.log(displayedBlogs);
-  };
-
-  const loadMoreBlogs = useCallback((data = blogs) => {
-    updateDisplayedBlog(data);
   }, [blogs]);
 
   useEffect(() => {
@@ -70,10 +69,27 @@ function Blog() {
     };
   }, [isLoading, noMoreData, loadMoreBlogs]);
 
+  useEffect(() => {
+    if (!searchKey) {
+      setIsSearched(false);
+    }
+  }, [searchKey]);
   function handleSearch() {
-    // Implement search logic
+    if (searchKey) {
+      setIsSearched(true);
+      const lowerCaseSearchKey = searchKey.toLowerCase(); // 将 searchKey 转为小写
+      const filteredList = blogs.filter((blog) => {
+        return (
+          blog.articleAuthor.toLowerCase().includes(lowerCaseSearchKey) ||
+          blog.articleTitle.toLowerCase().includes(lowerCaseSearchKey) ||
+          blog.articleInfo.toLowerCase().includes(lowerCaseSearchKey)
+        );
+      });
+      console.log(filteredList);
+      setSearchedList(filteredList);
+    }
   }
-
+  const showBlogs = isSearched ? searchedList : displayedBlogs;
   return (
     <div className={styles.pageWrapper}>
       <div className={styles.mainContainer}>
@@ -85,11 +101,11 @@ function Blog() {
             <SearchBar
               searchKey={searchKey}
               setSearchKey={setSearchKey}
-              handleSearch={() => handleSearch}
+              handleSearch={() => handleSearch()}
             />
           </div>
           <div className={styles.blogContainer}>
-            {displayedBlogs.map((blog) => (
+            {showBlogs.map((blog) => (
               <BlogItem
                 key={blog.articleId}
                 title={blog.articleTitle}
@@ -101,7 +117,7 @@ function Blog() {
           </div>
           {!noMoreData && <div ref={loaderRef} style={{ marginTop: '2.604vw', height: '20px' }}></div>}
           {isLoading && <div>正在加载更多文章...</div>}
-          {noMoreData && <div>没有更多文章了</div>}
+          {!isSearched ? noMoreData && <div>没有更多文章了</div> : ''}
         </div>
       </div>
     </div>

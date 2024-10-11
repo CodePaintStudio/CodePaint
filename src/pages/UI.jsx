@@ -1,60 +1,82 @@
 import React, { useEffect, useState } from 'react';
+import { ImageList, ImageListItem, ImageListItemBar } from '@mui/material';
 import styles from '../styles/ui.module.css';
 import NavHeader from '../components/NavHeader';
 import SearchBar from '../components/SearchBar';
-import { ImageList, ImageListItem, ImageListItemBar } from '@mui/material';
 import { getAllWorks } from '../api/uiWorks';
 
 function Ui(props) {
   const [searchKey, setSearchKey] = useState('');
-  const imagesItems = [
-    {
-      img: '../src/images/ui_works/test_img.png',
-      author: 'rurudo',
-      title: 'Sugar Rush',
-      competition: "C101",
-      category: "comic"
-    },
-    {
-      img: '../src/images/ui_works/test_img.png',
-      author: 'rurudo',
-      title: 'Sugar Rush',
-      competition: "C101",
-      category: "comic"
-    },
-    {
-      img: '../src/images/ui_works/test_img.png',
-      author: 'rurudo',
-      title: 'Sugar Rush',
-      competition: "C101",
-      category: "comic"
-    },
-    {
-      img: '../src/images/ui_works/test_img.png',
-      author: 'rurudo',
-      title: 'Sugar Rush',
-      competition: "C101",
-      category: "comic"
-    },
-    {
-      img: '../src/images/ui_works/test_img.png',
-      author: 'rurudo',
-      title: 'Sugar Rush',
-      competition: "C101",
-      category: "comic"
-    },
-  ];
+  const [workList, setWorkList] = useState([]);
+  const [isSearched, setIsSearched] = useState(false);
+  const [filterList,setFilterList] = useState([]);
+  const baseURL = 'http://47.109.193.161:3543/';
+  // const imagesItems = [
+  //   {
+  //     img: '../src/images/ui_works/test_img.png',
+  //     author: 'rurudo',
+  //     title: 'Sugar Rush',
+  //     competition: "C101",
+  //     category: "comic"
+  //   },
+  //   {
+  //     img: '../src/images/ui_works/test_img.png',
+  //     author: 'rurudo',
+  //     title: 'Sugar Rush',
+  //     competition: "C101",
+  //     category: "comic"
+  //   },
+  //   {
+  //     img: '../src/images/ui_works/test_img.png',
+  //     author: 'rurudo',
+  //     title: 'Sugar Rush',
+  //     competition: "C101",
+  //     category: "comic"
+  //   },
+  //   {
+  //     img: '../src/images/ui_works/test_img.png',
+  //     author: 'rurudo',
+  //     title: 'Sugar Rush',
+  //     competition: "C101",
+  //     category: "comic"
+  //   },
+  //   {
+  //     img: '../src/images/ui_works/test_img.png',
+  //     author: 'rurudo',
+  //     title: 'Sugar Rush',
+  //     competition: "C101",
+  //     category: "comic"
+  //   },
+  // ];
 
   useEffect(() => {
-    async function fetchData(){
-      const { data } = await getAllWorks();
-      console.log(data);
+    async function fetchData() {
+      const data = await getAllWorks();
+      // console.log(data);
+      setWorkList(data);
     }
     fetchData();
   }, []);
-  function handleSearch(){
-
+  useEffect(() => {
+    if (!searchKey) {
+      setIsSearched(false);
+    }
+  }, [searchKey]);
+  function handleSearch() {
+    if (searchKey) {
+      setIsSearched(true);
+      console.log(workList);
+      const lowerCaseSearchKey = searchKey.toLowerCase(); // 将 searchKey 转为小写
+      const filteredList = workList.filter((work) => (
+        work.workAuthor.toLowerCase().includes(lowerCaseSearchKey)
+          || work.workTitle.toLowerCase().includes(lowerCaseSearchKey)
+          || work.workDescription.toLowerCase().includes(lowerCaseSearchKey)
+      ));
+      console.log(filteredList);
+      setFilterList(filteredList);
+    }
   }
+  const displayList = isSearched ? filterList : workList;
   return (
     <div className={styles.mainContainer}>
       <div style={{ height: '154.25926vh' }} className={styles.mainContainer}>
@@ -68,7 +90,7 @@ function Ui(props) {
             <SearchBar
               searchKey={searchKey}
               setSearchKey={setSearchKey}
-              handleSearch={handleSearch}
+              handleSearch={() => handleSearch()}
             />
           </div>
           <ImageList
@@ -79,10 +101,12 @@ function Ui(props) {
             }}
             className={styles.works}
           >
-            {imagesItems.map((item, index) => (
+            {displayList.map((item, index) => (
               <ImageListItem
                 key={index}
                 sx={{
+                  width: '35.521vw',
+                  height: '49.84375vw !important',
                   marginBottom: '2vw',
                   '& .MuiImageListItemBar-subtitle': {
                     display: 'flex',
@@ -97,22 +121,24 @@ function Ui(props) {
                 }}
               >
                 <img
-                  src={item.img}
+                  src={`${baseURL}${item.workCover}`}
                   alt={item.title}
                   loading="lazy"
                   style={{
                     borderRadius: '1.042vw',
                     display: 'flex',
                     justifyContent: 'center',
+                    width: '35.521vw',
+                    height: '49.84375vw',
                   }}
                 />
                 <ImageListItemBar
                   title={item.title}
                   subtitle={(
                     < >
-                      <div>类别：{item.category}</div>
-                      <div>赛道：{item.competition}</div>
-                      <div>作者：{item.author}</div>
+                      <div>类别：{item.workType}</div>
+                      <div>赛道：{item.workType}</div>
+                      <div>作者：{item.workAuthor}</div>
                     </>
                   )}
                   postion="bottom"
