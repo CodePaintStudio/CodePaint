@@ -37,7 +37,14 @@ const HTMLContentParser = ({ content }) => {
             );
           case 'blockquote':
             return (
-              <Box sx={{ borderLeft: 4, borderColor: 'primary.main', pl: 2, my: 2 }}>
+              <Box sx={{
+                borderLeft: 4,
+                borderColor: 'primary.main',
+                pl: 2,
+                my: 2,
+                width: '100%',
+              }}
+              >
                 <Typography variant="body1" fontStyle="italic">
                   {domNode.children[0].children[0].data}
                 </Typography>
