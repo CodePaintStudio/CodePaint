@@ -11,9 +11,9 @@ function BlogItem({ title, image, id, info }) {
   const navigate = useNavigate();
   return (
     <Card sx={{
-      width: '50vw',
+      width: '53.643rem',
       boxShadow: 'none',
-      marginTop: '2.66vw',
+      marginTop: '2.571rem',
     }}
     >
       <CardActionArea
@@ -21,8 +21,8 @@ function BlogItem({ title, image, id, info }) {
         sx={{
           display: 'flex',
           justifyContent: 'space-around',
-          borderRadius: '1.042vw',
-          height: '9.5vw',
+          borderRadius: '1.286rem',
+          height: '10.5rem',
         }}
       >
         <CardMedia
@@ -30,22 +30,39 @@ function BlogItem({ title, image, id, info }) {
           image={`${baseURL}${image}`}
           title={title}
           sx={{
-            width: '14.364vw',
-            height: '9.01vw',
-            borderRadius: '1.042vw',
+            width: '15.714rem',
+            height: '10rem',
+            borderRadius: '1.286rem',
           }}
         />
         <CardContent sx={{
-          width: '29.6875vw',
+          width: '27rem',
+          height: '100%',
           padding: 0,
+          display: 'flex',
+          flexWrap: 'wrap',
         }}
         >
-          <Typography variant="h3" fontSize="1.5625vw" marginBottom="2.56vw" gutterBottom>
+          <Typography
+            variant="h3"
+            fontSize="1.674rem"
+            marginBottom="0.929rem"
+            marginTop="0.557rem"
+            gutterBottom
+          >
             {title}
           </Typography>
-          <Typography variant="body2" fontSize="1.042vw" color="#838383" width="29.21875vw">
-            {/* {content.length > 100 ? `${content.substring(0, 100)}...` : content} */}
-            {info}
+          <Typography
+            variant="body2"
+            fontSize="1.2rem"
+            color="#838383"
+            width="29.21875vw"
+            sx={{
+              wordWrap: 'break-word',
+            }}
+          >
+            {info.length > 100 ? `${info.substring(0, 100)}...` : info}
+            {/* {info} */}
           </Typography>
         </CardContent>
       </CardActionArea>

@@ -2,7 +2,6 @@ import React, {
   useEffect, useRef, useState, useCallback,
 } from 'react';
 import styles from '../styles/blog.module.css';
-import NavHeader from '../components/NavHeader';
 import SearchBar from '../components/SearchBar';
 import BlogItem from '../components/BlogItem';
 import { getAllArticle } from '../api/article';
@@ -78,49 +77,41 @@ function Blog() {
     if (searchKey) {
       setIsSearched(true);
       const lowerCaseSearchKey = searchKey.toLowerCase(); // 将 searchKey 转为小写
-      const filteredList = blogs.filter((blog) => {
-        return (
-          blog.articleAuthor.toLowerCase().includes(lowerCaseSearchKey) ||
-          blog.articleTitle.toLowerCase().includes(lowerCaseSearchKey) ||
-          blog.articleInfo.toLowerCase().includes(lowerCaseSearchKey)
-        );
-      });
+      const filteredList = blogs.filter((blog) => (
+        blog.articleAuthor.toLowerCase().includes(lowerCaseSearchKey)
+          || blog.articleTitle.toLowerCase().includes(lowerCaseSearchKey)
+          || blog.articleInfo.toLowerCase().includes(lowerCaseSearchKey)
+      ));
       console.log(filteredList);
       setSearchedList(filteredList);
     }
   }
   const showBlogs = isSearched ? searchedList : displayedBlogs;
   return (
-    <div className={styles.pageWrapper}>
-      <div className={styles.mainContainer}>
-        <div className={styles.mainTitle} />
-        <NavHeader activeIndex={3} />
-        <div className={styles.introContainer}>
-          <div className={styles.subTitle} />
-          <div className={styles.searchBarContainer}>
-            <SearchBar
-              searchKey={searchKey}
-              setSearchKey={setSearchKey}
-              handleSearch={() => handleSearch()}
-            />
-          </div>
-          <div className={styles.blogContainer}>
-            {showBlogs.map((blog) => (
-              <BlogItem
-                key={blog.articleId}
-                title={blog.articleTitle}
-                image={blog.articleImgUrl}
-                id={blog.articleId}
-                info={blog.articleInfo}
-              />
-            ))}
-          </div>
-          {!noMoreData && <div ref={loaderRef} style={{ marginTop: '2.604vw', height: '20px' }}></div>}
-          {isLoading && <div>正在加载更多文章...</div>}
-          {!isSearched ? noMoreData && <div>没有更多文章了</div> : ''}
-        </div>
+    <>
+      <div className={styles.subTitle} />
+      <div className={styles.searchBarContainer}>
+        <SearchBar
+          searchKey={searchKey}
+          setSearchKey={setSearchKey}
+          handleSearch={() => handleSearch()}
+        />
       </div>
-    </div>
+      <div className={styles.blogContainer}>
+        {showBlogs.map((blog) => (
+          <BlogItem
+            key={blog.articleId}
+            title={blog.articleTitle}
+            image={blog.articleImgUrl}
+            id={blog.articleId}
+            info={blog.articleInfo}
+          />
+        ))}
+      </div>
+      {!noMoreData && <div ref={loaderRef} style={{ marginTop: '2.604vw', height: '20px' }} />}
+      {isLoading && <div>正在加载更多文章...</div>}
+      {!isSearched ? noMoreData && <div>没有更多文章了</div> : ''}
+    </>
   );
 }
 

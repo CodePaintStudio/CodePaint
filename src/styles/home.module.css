@@ -1,0 +1,173 @@
+/*封面页*/
+.background{
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    background-image: url('../images/homepage/home_background.webp');
+    background-size: cover;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.homeItems{
+    width: 30%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title{
+    width: 26.09375vw;
+    height: 4.53125vw;
+    background-size: contain;
+    background-image: url("../images/general/codePaint.webp");
+    margin-bottom: 1.458vw;
+}
+
+.logo{
+    width: 19.479vw;
+    height: 18.49vw;
+    background-size: contain;
+    background-image: url("../images/homepage/logo.webp");
+}
+
+.spiltLine{
+    width: 15.15625vw;
+    height: 0.052vw;
+    border: 0.052vw solid #D9D9D9;
+    margin-bottom: 0.9375vw;
+}
+
+.slogan{
+    display: block;
+    font-family: Philosopher,sans-serif;
+    color: #fff;
+    font-size: 1.146vw;
+    margin-bottom: 1.71875vw;
+    margin-right: 0.15625vw;
+}
+
+.button{
+    height: 4.115vw;
+    width: 4.115vw;
+    background-size: contain;
+    background-image: url("../images/homepage/button.webp");
+    cursor: pointer;
+}
+
+@font-face {
+    font-family: 'Philosopher';
+    src: url('../font/Philosopher.woff2') format('woff2'),
+    url('../font/Philosopher.woff') format('woff'),
+    url('../font/Philosopher.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/*主页面*/
+.mainContainer {
+    flex: 1;
+    display: flex;
+    width: 100%;
+    padding: 0;
+    min-height: 100vh;
+    background-image: url("../images/general/generalBackground.webp");
+    background-size: cover;
+    flex-direction: column;
+    align-items: center;
+}
+
+.introContainer{
+    display: flex;
+    width: 82.143rem;
+    height: 115.625vw;
+    position: relative;
+    background-color: #fff;
+    justify-content: center;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    /*margin-top: -0.631vw;*/
+    /*z-index: 2;*/
+}
+
+.subTitle{
+    /*position: absolute;*/
+    margin-top: 5.357rem;
+    width: 66.714rem;
+    height: 5rem;
+    background-image: url("../images/homepage/subtitle.webp");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.mainTitle{
+    width: 36.143rem;
+    height: 15.5rem;
+    background-image: url("../images/general/codePaint.webp");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.carousel{
+    /*position: absolute;*/
+    /*top: 10vw;*/
+    width: 72rem;
+    height: 21.357rem;
+    margin-top: 3.857rem;
+    /*--swiper-pagination-color: #68a69f;*/
+    :global(.swiper-pagination-bullet-active) {
+        background-color: #68a69f;
+    }
+    :global(.swiper-pagination-bullet) {
+        width: 0.9375vw;
+        height: 0.46875vw;
+        border-radius: 0.6vw;
+    }
+}
+
+.previousBtn{
+    position: absolute;
+    width: 5.25rem;
+    height: 4.9rem;
+    left: 6.3rem;
+    top: 22.5rem;
+    cursor: pointer;
+    background-image: url("../images/homepage/navigate_prev.webp");
+    background-size: contain;
+    z-index: 10;
+}
+
+.nextBtn{
+    position: absolute;
+    width: 5.25rem;
+    height: 4.9rem;
+    left: 71.214rem;
+    top: 22.5rem;
+    cursor: pointer;
+    background-image: url("../images/homepage/navigate_next.webp");
+    background-size: contain;
+    z-index: 10;
+}
+
+.swiper-pagination-bullet-active {
+    background: #68a69f; /* 修改选中时的颜色 */
+}
+
+.mainImage{
+    /*position: absolute;*/
+    /*top: 40.365vw;*/
+    margin-top: 6.571rem;
+    width: 72rem;
+    height: 33.214rem;
+    background-image: url("../images/homepage/home_background.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
