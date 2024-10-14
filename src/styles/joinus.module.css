@@ -16,131 +16,83 @@
     font-display: swap;
 }
 
-.pageWrapper {
-    min-height: 100vh;
-    background-image: url("../images/general/generalBackground.webp");
-    background-size: cover;
-    background-repeat: repeat-y;
-    display: flex;
-    flex-direction: column;
-}
-
-.mainContainer {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding: 0;
-    min-height: 100vh;
-}
-
-.mainTitle{
-    width: 26.354vw;
-    height: 11.302vw;
-    background-image: url("../images/general/codePaint.webp");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.introContainer{
-    display: flex;
-    width: 84.896vw;
-    min-height: 115.625vw;
-    position: relative;
-    background-color: #fff;
-    justify-content: center;
-    margin-top: -0.631vw;
-
-    /*z-index: 2;*/
-}
-
 .subTitle{
-    position: absolute;
-    top: 3.75vw;
-    width: 48.646vw;
-    height: 3.646vw;
+    width: 66.714rem;
+    height: 2.429rem;
+    margin-top: 4.143rem;
     background-image: url("../images/joinus/subtitle.webp");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
 
+/*.subTitleJoin{*/
+/*    width: 48.646vw;*/
+/*    height: 3.646vw;*/
+/*    background-image: url("../images/joinus/subtitle.webp");*/
+/*}*/
 
-.titleFeedback{
-    position: absolute;
-    top: 50vw;
-    width: 33.021vw;
-    height: 2.552vw;
+.titleContactCn{
+    width: 80rem;
+    height: 1.714rem;
+    margin-top: 0.429rem;
     font-family: "Inter 28pt",sans-serif;
     text-align: center;
-    font-size: 3.333vw;
+    font-size: 1.6rem;
+    font-weight: 900;
+    /*background-image: url("../images/activity/upcoming_cn.webp");*/
+    /*background-size: cover;*/
+}
+
+.titleContact{
+    width: 50rem;
+    height: 2rem;
+    margin-top: 3.5rem;
+    font-family: "Inter 28pt",sans-serif;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 800;
+
+    /*background-image: url("../images/activity/upcoming_events.webp");*/
+    /*background-size: cover;*/
+}
+
+.QRCode{
+    width: 15.143rem;
+    height: 15.143rem;
+    background-color: #b9dad7;
+    margin-top: 3rem;
+}
+
+.titleFeedback{
+    width: 50rem;
+    height: 2rem;
+    margin-top: 11.786rem;
+    font-family: "Inter 28pt",sans-serif;
+    text-align: center;
+    font-size: 1.6rem;
     font-weight: 800;
     /*background-image: url("../images/activity/upcoming_events.webp");*/
     /*background-size: cover;*/
 }
 
 .titleFeedbackCn{
-    position: absolute;
-    top: 54.792vw;
-    width: 8.177vw;
-    height: 1.979vw;
+    width: 80rem;
+    height: 1.714rem;
+    margin-top: 0.429rem;
     font-family: "Inter 28pt",sans-serif;
+    text-align: center;
+    font-size: 1.6rem;
     font-weight: 900;
-    font-size: 2.5vw;
-    text-align: center;
-    /*background-image: url("../images/activity/upcoming_cn.webp");*/
-    /*background-size: cover;*/
-}
-
-.titleContact{
-    position: absolute;
-    top: 10.573vw;
-    width: 33.021vw;
-    height: 2.552vw;
-    font-family: "Inter 28pt",sans-serif;
-    text-align: center;
-    font-size: 3.333vw;
-    font-weight: 800;
-    /*background-image: url("../images/activity/upcoming_events.webp");*/
-    /*background-size: cover;*/
-}
-
-.titleContactCn{
-    position: absolute;
-    top: 15.208vw;
-    width: 10.177vw;
-    height: 1.979vw;
-    font-family: "Inter 28pt",sans-serif;
-    font-weight: 900;
-    font-size: 2.5vw;
-    text-align: center;
     /*background-image: url("../images/activity/upcoming_cn.webp");*/
     /*background-size: cover;*/
 }
 
 .feedback{
-    position: relative;
-    top: 68.333vw;
-    width: 70vw;
+    margin-top: 4.143rem;
 }
 
 .feedback > *:last-child {
     margin-bottom: 0;
 }
 
-.subTitleJoin{
-    width: 48.646vw;
-    height: 3.646vw;
-    background-image: url("../images/joinus/subtitle.webp");
-}
-
-.QRCode{
-    position: absolute;
-    width: 16.042vw;
-    height: 16.042vw;
-    background-color: #b9dad7;
-    top: 21.40625vw;
-    left: 14.375vw;
-}

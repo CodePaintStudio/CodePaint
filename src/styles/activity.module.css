@@ -1,75 +1,60 @@
-.mainContainer{
-    display: flex;
-    height: 143.021vw;
-    /*max-width: 70%;*/
-    justify-content: center;
-    align-content: flex-start;
-    flex-wrap: wrap;
-    background-image: url("../images/general/generalBackground.webp");
-    background-size: cover;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-}
-
-.mainTitle{
-    width: 26.354vw;
-    height: 11.302vw;
-    background-image: url("../images/general/codePaint.webp");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.introContainer{
-    display: flex;
-    width: 84.896vw;
-    height: 115.625vw;
-    position: relative;
-    background-color: #fff;
-    justify-content: center;
-    margin-top: -0.631vw;
-
-    /*z-index: 2;*/
-}
-
 .subTitle{
-    position: absolute;
-    top: 3.75vw;
-    width: 48.646vw;
-    height: 3.646vw;
+    width: 68.571rem;
+    height: 2.429rem;
+    margin-top: 4.143rem;
     background-image: url("../images/activity/sub-title.webp");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
 
+.titleUnpacking{
+    width: 50rem;
+    height: 2rem;
+    margin-top: 3.5rem;
+    font-family: "Inter 28pt",sans-serif;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 800;
+    /*background-image: url("../images/activity/upcoming_events.webp");*/
+    /*background-size: cover;*/
+}
+
+.titleUnpackingCn{
+    width: 50rem;
+    height: 1.714rem;
+    margin-top: 0.429rem;
+    font-family: "Inter 28pt",sans-serif;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 900;
+    /*background-image: url("../images/activity/upcoming_cn.webp");*/
+    /*background-size: cover;*/
+}
+
 .swiperUnpack{
-    position: absolute;
-    top: 23.229vw;
+    margin-top: 2.214rem;
 }
 
 .swiperHistory{
-    position: absolute;
-    top: 75.833vw;
+    margin-top: 2.214rem;
 }
 
 .carousel{
-    /*position: absolute;*/
-    /*top: 23.229vw;*/
-    width: 69.0625vw;
-    height: 31.875vw;
+    width: 66.857rem;
+    height: 30.929rem;
     /*--swiper-pagination-color: #68a69f;*/
     /*:global(.swiper-pagination-bullet-active) {*/
     /*    background-color: #68a69f;*/
     /*}*/
-    :global(.swiper-pagination-bullet) {
-        width: 0.9375vw;
-        height: 0.46875vw;
-        border-radius: 0.6vw;
-    }
+    /*:global(.swiper-pagination-bullet) {*/
+    /*    width: 0.9375vw;*/
+    /*    height: 0.46875vw;*/
+    /*    border-radius: 0.6vw;*/
+    /*}*/
     :global(.swiper-slide){
-        width: 20.78125vw;
-        height: 31.875vw;
+        width: 20.143rem;
+        height: 30.929rem;
     }
     :global(.swiper-slide img){
         width: 100%;
@@ -81,10 +66,10 @@
 
 .swiperUnpack.previousBtn{
     position: absolute;
-    width: 5.417vw;
-    height: 5.104vw;
-    left: 1.40625vw;
-    top: 35.521vw;
+    width: 5rem;
+    height: 4.714rem;
+    left: 1.286rem;
+    top: 28rem;
     cursor: pointer;
     background-image: url("../images/homepage/navigate_prev.webp");
     background-size: contain;
@@ -93,22 +78,46 @@
 
 .swiperUnpack.nextBtn{
     position: absolute;
-    width: 5.417vw;
-    height: 5.104vw;
-    left: 78.333vw;
-    top: 35.521vw;
+    width: 5rem;
+    height: 4.714rem;
+    left: 75.857rem;
+    top: 28rem;
     cursor: pointer;
     background-image: url("../images/homepage/navigate_next.webp");
     background-size: contain;
     z-index: 10;
 }
 
+.titleHistory{
+    width: 50rem;
+    height: 2rem;
+    margin-top: 8.357rem;
+    font-family: "Inter 28pt",sans-serif;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 800;
+    /*background-image: url("../images/activity/history_activities.webp");*/
+    /*background-size: contain;*/
+}
+
+.titleHistoryCn{
+    width: 50rem;
+    height: 2rem;
+    margin-top: 0.429rem;
+    font-family: "Inter 28pt",sans-serif;
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 900;
+    /*background-image: url("../images/activity/history_cn.webp");*/
+    /*background-size: cover;*/
+}
+
 .swiperHistory.previousBtn{
     position: absolute;
-    width: 5.417vw;
-    height: 5.104vw;
-    left: 1.40625vw;
-    top: 88.125vw;
+    width: 5rem;
+    height: 4.714rem;
+    left: 1.286rem;
+    top: 73.571rem;
     cursor: pointer;
     background-image: url("../images/homepage/navigate_prev.webp");
     background-size: contain;
@@ -117,64 +126,14 @@
 
 .swiperHistory.nextBtn{
     position: absolute;
-    width: 5.417vw;
-    height: 5.104vw;
-    left: 78.333vw;
-    top: 88.125vw;
+    width: 5rem;
+    height: 4.714rem;
+    left: 75.857rem;
+    top: 73.571rem;
     cursor: pointer;
     background-image: url("../images/homepage/navigate_next.webp");
     background-size: contain;
     z-index: 10;
 }
 
-.titleUnpacking{
-    position: absolute;
-    top: 12.708vw;
-    width: 40.021vw;
-    height: 2.552vw;
-    font-family: "Inter 28pt",sans-serif;
-    text-align: center;
-    font-size: 3.333vw;
-    font-weight: 800;
-    /*background-image: url("../images/activity/upcoming_events.webp");*/
-    /*background-size: cover;*/
-}
 
-.titleUnpackingCn{
-    position: absolute;
-    top: 17.5vw;
-    width: 8.533vw;
-    height: 1.979vw;
-    font-family: "Inter 28pt",sans-serif;
-    text-align: center;
-    font-size: 2.083vw;
-    font-weight: 900;
-    /*background-image: url("../images/activity/upcoming_cn.webp");*/
-    /*background-size: cover;*/
-}
-
-.titleHistory{
-    position: absolute;
-    top: 65.365vw;
-    width: 40.729vw;
-    height: 2.552vw;
-    font-family: "Inter 28pt",sans-serif;
-    text-align: center;
-    font-size: 3.333vw;
-    font-weight: 800;
-    /*background-image: url("../images/activity/history_activities.webp");*/
-    /*background-size: contain;*/
-}
-
-.titleHistoryCn{
-    position: absolute;
-    top: 70.3125vw;
-    width: 8.5vw;
-    height: 1.979vw;
-    font-family: "Inter 28pt",sans-serif;
-    text-align: center;
-    font-size: 2.083vw;
-    font-weight: 900;
-    /*background-image: url("../images/activity/history_cn.webp");*/
-    /*background-size: cover;*/
-}
