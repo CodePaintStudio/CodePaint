@@ -2,7 +2,6 @@ import React, {
   useEffect, useRef, useState, useCallback,
 } from 'react';
 import styles from '../styles/blog.module.css';
-import NavHeader from '../components/NavHeader';
 import SearchBar from '../components/SearchBar';
 import BlogItem from '../components/BlogItem';
 import { getAllArticle } from '../api/article';

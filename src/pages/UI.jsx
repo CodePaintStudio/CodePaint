@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ImageList, ImageListItem, ImageListItemBar } from '@mui/material';
-import { NavLink, useNavigate } from 'react-router-dom';
+import useNavigate  from 'react-router-dom';
 import styles from '../styles/ui.module.css';
-import NavHeader from '../components/NavHeader';
 import SearchBar from '../components/SearchBar';
 import { getAllWorks } from '../api/uiWorks';
 

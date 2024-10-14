@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import styles from '../styles/activity.module.css';
-import NavHeader from '../components/NavHeader';
 import ActivitySwiper from '../components/ActivitySwiper';
 import { getActivity, getRecentActivity } from '../api/activty';
 
-function Activity(props) {
+function Activity() {
   const [activity, setActivity] = useState([]);
   const [upcomingList, setUpcomingList] = useState([]);
   const [pastList, setPastList] = useState([]);

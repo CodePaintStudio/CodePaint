@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, Typography, IconButton } from '@mui/material';
-import { Add as AddIcon, LocalPhoneOutlined } from '@mui/icons-material';
+import { Add as AddIcon } from '@mui/icons-material';
 
 function ContactItem({ label, value, action }) {
   return (
