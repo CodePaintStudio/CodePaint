@@ -7,7 +7,7 @@ import jsx from 'react-syntax-highlighter/dist/esm/languages/prism/jsx';
 
 SyntaxHighlighter.registerLanguage('jsx', jsx);
 
-const HTMLContentParser = ({ content }) => {
+function HTMLContentParser({ content }) {
   const extractCode = (node) => {
     if (node.type === 'text') {
       return node.data;
@@ -27,17 +27,17 @@ const HTMLContentParser = ({ content }) => {
           case 'p':
             return (
               <Typography paragraph>
-                {domNode.children.map((child, index) =>
-                  child.type === 'tag' && child.name === 'img'
-                    ? <Box
+                {domNode.children.map((child, index) => (child.type === 'tag' && child.name === 'img'
+                  ? (
+                    <Box
                       component="img"
                       key={`img-${index}-${child.attribs.src}`}
                       src={child.attribs.src}
                       alt={child.attribs.alt}
                       sx={{ maxWidth: '100%', height: 'auto', my: 2 }}
                     />
-                    : child.data || ''
-                )}
+                  )
+                  : child.data || ''))}
               </Typography>
             );
           case 'img':
@@ -86,6 +86,6 @@ const HTMLContentParser = ({ content }) => {
   };
 
   return <>{parse(content, parseOptions)}</>;
-};
+}
 
 export default HTMLContentParser;
