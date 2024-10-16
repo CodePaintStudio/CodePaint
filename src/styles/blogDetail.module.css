@@ -1,60 +1,26 @@
-.pageWrapper {
-    min-height: 100vh;
-    background-image: url("../images/general/generalBackground.webp");
-    background-size: cover;
-    background-repeat: repeat-y;
-}
-
-.mainContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    padding: 0;
-    min-height: 100vh;
-}
-
-.mainTitle{
-    width: 26.354vw;
-    height: 11.302vw;
-    background-image: url("../images/general/codePaint.webp");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.introContainer{
-    display: flex;
-    width: 84.896vw;
-    min-height: 100vh;
-    position: relative;
-    background-color: #fff;
-    justify-content: center;
-    margin-top: -0.631vw;
-
-    /*z-index: 2;*/
-}
-
 .backButton{
-    background-image: url("../images/general/back_button.webp");
     position: absolute;
+    background-image: url("../images/general/back_button.webp");
     background-size: contain;
-    width: 4.115vw;
-    height: 4.115vw;
-    top: 2.917vw;
-    left: 3.125vw;
+    width: 3.571rem;
+    height: 3.571rem;
+    left: 3.357rem;
+    top: 3.286rem;
 }
 
 .articleTitle{
     position: absolute;
-    left: 3.125vw;
-    top: 9.167vw;
+    width: 60%;
+    height: 3.571rem;
+    top: 8.571rem;
+    left: 3.357rem;
 }
 
 .author{
+    width: 60%;
     position: absolute;
-    left: 3.125vw;
-    top: 12.76vw;
+    left: 3.357rem;
+    top: 12rem;
 }
 
 .content {

@@ -1,10 +1,25 @@
 import React from 'react';
 import parse from 'html-react-parser';
 import { Typography, Box } from '@mui/material';
+import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { prism } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import jsx from 'react-syntax-highlighter/dist/esm/languages/prism/jsx';
+
+SyntaxHighlighter.registerLanguage('jsx', jsx);
 
 const HTMLContentParser = ({ content }) => {
+  const extractCode = (node) => {
+    if (node.type === 'text') {
+      return node.data;
+    }
+    if (node.children && node.children.length > 0) {
+      return node.children.map(extractCode).join('');
+    }
+    return '';
+  };
   const parseOptions = {
     replace: (domNode) => {
+      // console.log(domNode);
       if (domNode.type === 'tag') {
         switch (domNode.name) {
           case 'h1':
@@ -50,11 +65,24 @@ const HTMLContentParser = ({ content }) => {
                 </Typography>
               </Box>
             );
+          case 'div':
+            if (domNode.attribs.class === 'toastui-editor-ww-code-block-highlighting') {
+              const code = extractCode(domNode);
+              const language = domNode.attribs['data-language'] || 'javascript';
+              return (
+                <Box sx={{ my: 2 }}>
+                  <SyntaxHighlighter language={language} style={prism}>
+                    {code}
+                  </SyntaxHighlighter>
+                </Box>
+              );
+            }
+            return domNode;
           default:
             return domNode;
         }
       }
-    }
+    },
   };
 
   return <>{parse(content, parseOptions)}</>;
