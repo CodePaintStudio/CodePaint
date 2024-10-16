@@ -1,0 +1,72 @@
+.backButton{
+    position: absolute;
+    background-image: url("../images/general/back_button.webp");
+    background-size: contain;
+    width: 3.571rem;
+    height: 3.571rem;
+    left: 3.357rem;
+    top: 3.286rem;
+}
+
+.intro{
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 8.9rem;
+    width: 90%;
+    justify-content: center;
+}
+
+.cover{
+    width: 37.429rem;
+    height: 44.714rem;
+    border-radius: 1.286rem;
+    margin-right: 3.214rem;
+}
+
+.basicInfo{
+    width: 45%;
+}
+
+.title{
+    font-size: 1.714rem;
+    font-family: "Inter 28pt",sans-serif;
+}
+
+.createTime{
+    color: #838383
+}
+
+.description{
+    color: #838383;
+    font-size: 1rem;
+    font-family: "Inter 28pt",sans-serif;
+}
+
+.display{
+    margin-top: 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 90%;
+}
+
+.subtitle{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 1.571rem;
+    margin-top: 5.357rem;
+    /*width: 14.286rem;*/
+}
+
+.tagDisplay{
+    margin-top: 5.357rem;
+}
+
+.tagImage{
+    width: 44.714rem;
+    height: 53.429rem;
+    object-fit: cover !important;
+    border-radius: 0.714rem ;
+    margin-top: 5.357rem;
+}
