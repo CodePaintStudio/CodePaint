@@ -29,7 +29,7 @@ export default function App() {
       </section>
       {/* 首页主要内容 */}
       <section className={styles.mainArea}>
-        <div ref={contentRef} style={{ minHeight: '110vh' }} className={styles.mainContainer}>
+        <div ref={contentRef} className={styles.mainContainer}>
           <div className={styles.mainTitle} />
           <NavHeader activeIndex={0} />
           <div className={styles.introContainer}>

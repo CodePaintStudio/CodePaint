@@ -44,10 +44,16 @@ function JoinUs() {
         className={styles.feedback}
         sx={{
           height: '42.857rem !important',
+          marginTop: '4.143rem',
         }}
       >
         {/* 类型选择 */}
-        <Box display="flex" alignItems="center" marginBottom="3.229vw" height="3.958vw">
+        <Box
+          display="flex"
+          alignItems="center"
+          marginBottom="3.229vw"
+          height="3.958vw"
+        >
           <Typography
             variant="subtitle1"
             sx={{

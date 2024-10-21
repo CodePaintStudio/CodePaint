@@ -1,7 +1,8 @@
 import React from 'react';
-import { FormControl, IconButton, InputAdornment, OutlinedInput, TextField } from '@mui/material';
-import SearchIcon from "@mui/icons-material/Search";
-import { Form } from 'react-router-dom';
+import {
+  FormControl, IconButton, InputAdornment, OutlinedInput,
+} from '@mui/material';
+import SearchIcon from '@mui/icons-material/Search';
 
 function SearchBar(props) {
   return (
