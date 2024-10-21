@@ -22,7 +22,7 @@ function Blog() {
       const currentLength = prevBlogs.length;
       const nextBlogs = data.slice(currentLength, currentLength + 8);
       const newBlogs = [...prevBlogs, ...nextBlogs];
-      // console.log(data);
+      // console.log(nextBlogs);
       if (newBlogs.length >= data.length) {
         setNoMoreData(true);
       }
