@@ -12,7 +12,7 @@ import { sendFeedback } from '../api/joinus';
 import ContactInfo from '../components/ContactInfo';
 
 function JoinUs() {
-  const [type, setType] = useState('');
+  const [type, setType] = useState('web_content');
   const [contact, setContact] = useState('');
   const [feedbackContent, setFeedbackContent] = useState('');
 
@@ -198,7 +198,8 @@ function JoinUs() {
           填写您的反馈内容
         </Typography>
         <TextField
-          autoComplete="email"
+          multiline
+          placeholder="在这里留下你的反馈"
           onChange={(e) => setFeedbackContent(e.target.value)}
           sx={{
             // width: '75vw',
