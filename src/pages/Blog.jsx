@@ -36,7 +36,7 @@ function Blog() {
   useEffect(() => {
     async function fetchData() {
       const data = await getAllArticle();
-      setBlogs(data);
+      setBlogs(() => data);
       loadMoreBlogs(data);
     }
     fetchData();
@@ -89,7 +89,7 @@ function Blog() {
   const showBlogs = isSearched ? searchedList : displayedBlogs;
   return (
     <>
-      <div className={styles.subTitle} />
+      <div className={styles.subTitle}>前端博客</div>
       <div className={styles.searchBarContainer}>
         <SearchBar
           searchKey={searchKey}

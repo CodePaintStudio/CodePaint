@@ -29,7 +29,7 @@ function JoinUs() {
 
   return (
     <>
-      <div className={styles.subTitle} />
+      <div className={styles.subTitle}>加入我们</div>
       {/* 信息展示部分 */}
       <div className={styles.titleContact}>CONTACT US</div>
       <div className={styles.titleContactCn}>联系我们</div>

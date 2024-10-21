@@ -76,7 +76,7 @@
     display: flex;
     width: 100%;
     padding: 0;
-    min-height: 100vh;
+    min-height: 119rem;
     background-image: url("../images/general/generalBackground.webp");
     background-size: cover;
     flex-direction: column;
@@ -86,7 +86,7 @@
 .introContainer{
     display: flex;
     width: 82.143rem;
-    min-height: 115.625vw;
+    min-height: 119rem;
     position: relative;
     background-color: #fff;
     justify-content: center;
@@ -98,10 +98,15 @@
 
 .subTitle{
     /*position: absolute;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    font-size: 1.786rem;
     margin-top: 5.357rem;
     width: 66.714rem;
     height: 5rem;
-    background-image: url("../images/homepage/subtitle.webp");
+    background-image: url("../images/general/subtitle_line.webp");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
