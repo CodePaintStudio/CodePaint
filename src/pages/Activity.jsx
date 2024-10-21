@@ -2,12 +2,12 @@ import React, { useEffect, useState } from 'react';
 import styles from '../styles/activity.module.css';
 import ActivitySwiper from '../components/ActivitySwiper';
 import { getActivity, getRecentActivity } from '../api/activty';
+import baseURL from '../utils/baseURL';
 
 function Activity() {
   const [activity, setActivity] = useState([]);
   const [upcomingList, setUpcomingList] = useState([]);
   const [pastList, setPastList] = useState([]);
-  const baseURL = 'http://47.109.193.161:3543/';
   useEffect(() => {
     async function fetchData() {
       const upcomingData = await getActivity();
@@ -29,7 +29,7 @@ function Activity() {
 
   return (
     <>
-      <div className={styles.subTitle} />
+      <div className={styles.subTitle}>活动</div>
       <div className={styles.titleUnpacking}>UPCOMING ACTIVITIES</div>
       <div className={styles.titleUnpackingCn}>活动预告</div>
       {/* customClass用于轮播图定位 */}

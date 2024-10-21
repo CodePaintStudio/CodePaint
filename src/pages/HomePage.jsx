@@ -15,7 +15,7 @@ function Home(props) {
   ];
   return (
     <>
-      <div className={styles.subTitle} />
+      <div className={styles.subTitle}>CODEPAINT</div>
       <Swiper
         loop
         navigation={{ nextEl: '.custom-next', prevEl: '.custom-prev' }}

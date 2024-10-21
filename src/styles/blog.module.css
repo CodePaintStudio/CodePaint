@@ -1,7 +1,12 @@
 .subTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 66.714rem;
     height: 3.857rem;
-    background-image: url("../images/blog/subtitle.webp");
+    font-size: 1.857rem;
+    font-weight: 500;
+    background-image: url("../images/general/subtitle_line.webp");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -10,7 +15,7 @@
 }
 
 .searchBarContainer {
-    width: 32.143rem;
+    width: 30rem;
     height: 3rem;
     margin-bottom: 9.32275vw;
 }

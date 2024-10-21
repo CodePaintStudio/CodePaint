@@ -1,8 +1,13 @@
 .subTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.857rem;
+    font-weight: 500;
     width: 68.571rem;
     height: 2.429rem;
     margin-top: 4.143rem;
-    background-image: url("../images/activity/sub-title.webp");
+    background-image: url("../images/general/subtitle_line.webp");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;

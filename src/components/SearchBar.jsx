@@ -8,6 +8,7 @@ function SearchBar(props) {
     <FormControl className="searchBar" style={{ height: '100%', width: '100%' }}>
       <OutlinedInput
         id="search"
+        placeholder="搜索..."
         onChange={(e) => props.setSearchKey(e.target.value)}
         variant="outlined"
         value={props.searchKey}

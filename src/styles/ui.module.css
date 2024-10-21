@@ -1,8 +1,13 @@
 .subTitle{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.857rem;
+    font-weight: 500;
     width: 66.714rem;
     height: 2.429rem;
     margin-top: 4.143rem;
-    background-image: url("../images/ui_works/subtitle.webp");
+    background-image: url("../images/general/subtitle_line.webp");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -31,8 +36,10 @@
 
 .searchBarContainer{
     margin-top: 2.5rem;
-    width: 50rem;
+    width: 30rem;
     height: 3.5rem;
+    margin-left: 10.714rem;
+    margin-right: 10.714rem;
 }
 
 form.searchBar{

@@ -4,13 +4,12 @@ import { useNavigate } from 'react-router-dom';
 import styles from '../styles/ui.module.css';
 import SearchBar from '../components/SearchBar';
 import { getAllWorks } from '../api/uiWorks';
+import baseURL from '../utils/baseURL';
 
 function Ui(props) {
   const [searchKey, setSearchKey] = useState('');
   const [workList, setWorkList] = useState([]);
   const [isSearched, setIsSearched] = useState(false);
-  const [filterList, setFilterList] = useState([]);
-  const baseURL = 'http://47.109.193.161:3543/';
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -29,21 +28,21 @@ function Ui(props) {
   function handleSearch() {
     if (searchKey) {
       setIsSearched(true);
-      console.log(workList);
+      // console.log(workList);
       const lowerCaseSearchKey = searchKey.toLowerCase(); // 将 searchKey 转为小写
       const filteredList = workList.filter((work) => (
         work.workAuthor.toLowerCase().includes(lowerCaseSearchKey)
           || work.workTitle.toLowerCase().includes(lowerCaseSearchKey)
           || work.workDescription.toLowerCase().includes(lowerCaseSearchKey)
       ));
-      console.log(filteredList);
+      // console.log(filteredList);
       setFilterList(filteredList);
     }
   }
   const displayList = isSearched ? filterList : workList;
   return (
     < >
-      <div className={styles.subTitle} />
+      <div className={styles.subTitle}>UI作品</div>
       <div className={styles.titleWorkCase}>WORK CASE</div>
       <div className={styles.titleWorkCaseCn}>作品案例</div>
       <div className={styles.searchBarContainer}>

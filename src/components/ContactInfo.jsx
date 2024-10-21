@@ -18,7 +18,7 @@ function ContactItem({ label, value, action }) {
         mb: 1,
       }}
     >
-      <Typography fontSize="1.302vw">
+      <Typography fontSize="1.429rem">
         {label}
         :
         {value}

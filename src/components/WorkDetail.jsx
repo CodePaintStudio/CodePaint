@@ -13,7 +13,7 @@ function WorkDetail(props) {
     async function fetchData() {
       const data = await getWorkById(id);
       setWorkContent(data[0]);
-      console.log(data[0]);
+      // console.log(data[0]);
     }
     fetchData();
   }, [id]);
@@ -37,7 +37,7 @@ function WorkDetail(props) {
         />
         <Box className={styles.basicInfo}>
           <Typography variant="h3" className={styles.title}>{workContent.workTitle}</Typography>
-          <Typography variant="h6" className={styles.createTime}>{workContent.workCreateTime.substring(0, 10)}</Typography>
+          <Typography variant="h6" className={styles.createTime}>{workContent.workCreateTime?.substring(0, 10)}</Typography>
           <Typography variant="body1" className={styles.description} gutterBottom>
             {workContent.workDescription}
           </Typography>
