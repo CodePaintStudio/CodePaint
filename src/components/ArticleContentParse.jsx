@@ -19,7 +19,7 @@ function HTMLContentParser({ content }) {
   };
   const parseOptions = {
     replace: (domNode) => {
-      // console.log(domNode);
+      console.log(domNode);
       if (domNode.type === 'tag') {
         switch (domNode.name) {
           case 'h1':
