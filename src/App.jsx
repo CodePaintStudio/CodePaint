@@ -1,9 +1,16 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import NavHeader from './components/NavHeader';
 import styles from './styles/home.module.css';
 import RouteConfig from './router';
+import countPost from './api/count';
 
 export default function App() {
+
+  // 页面加载完成计数
+  useEffect(() => {
+    countPost();
+  }, []);
+
   const contentRef = useRef(null);
   function handleScroll() {
     contentRef.current.scrollIntoView({ behavior: 'smooth' });
