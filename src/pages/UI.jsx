@@ -55,7 +55,7 @@ function Ui(props) {
       <ImageList
         gap="7.14rem"
         sx={{
-          width: '66.286rem',
+          minWidth: '66.286rem',
           height: '78.125vw',
         }}
         className={styles.works}

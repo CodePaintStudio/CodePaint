@@ -16,7 +16,7 @@ function BlogDetail() {
       const data = await getArticleById(id);
       setArticleContent(data[0].articleContent);
       setArticleValue(data[0]);
-      console.log(data[0]);
+      console.log(data[0].articleContent);
     }
     fetchData();
   }, [id]);

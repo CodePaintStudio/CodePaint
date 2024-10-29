@@ -13,6 +13,7 @@ function ContactItem({ label, value, action }) {
         color: 'white',
         display: 'flex',
         alignItems: 'center',
+        borderRadius: '0.857rem',
         justifyContent: 'space-between',
         px: 2,
         mb: 1,

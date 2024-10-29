@@ -19,7 +19,7 @@ function HTMLContentParser({ content }) {
   };
   const parseOptions = {
     replace: (domNode) => {
-      console.log(domNode);
+      // console.log(domNode);
       if (domNode.type === 'tag') {
         switch (domNode.name) {
           case 'h1':
@@ -61,7 +61,7 @@ function HTMLContentParser({ content }) {
               }}
               >
                 <Typography variant="body1" fontStyle="italic">
-                  {domNode.children[0].children[0].data}
+                  {domNode.children[0].data}
                 </Typography>
               </Box>
             );

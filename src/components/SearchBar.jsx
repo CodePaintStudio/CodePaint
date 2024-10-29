@@ -6,7 +6,7 @@ import SearchIcon from '@mui/icons-material/Search';
 
 function SearchBar(props) {
   return (
-    <FormControl className="searchBar" style={{ height: '100%', width: '100%' }}>
+    <FormControl className="searchBar" style={{ height: '100%' }}>
       <OutlinedInput
         id="search"
         placeholder="搜索..."
@@ -14,22 +14,22 @@ function SearchBar(props) {
         variant="outlined"
         value={props.searchKey}
         sx={{
-          width: '100%',
+          width: '30rem',
           height: '100%',
           backgroundColor: '#232324',
           color: '#FFF',
-          borderRadius: '1.042vw',
+          borderRadius: '1.286rem',
           '& .MuiFormControl-root': {
-            width: '100%',
+            // width: '100%',
             height: '100%',
-            borderRadius: '1.042vw',
+            borderRadius: '1.286rem',
           },
           '& .MuiInputBase-input': {
             height: '100%',
-            borderRadius: '1.042vw',
+            borderRadius: '1.286rem',
             color: '#FFF',
-            paddingLeft: '1vw',
-            paddingRight: '1vw',
+            paddingLeft: '1rem',
+            paddingRight: '1rem',
           },
         }}
         endAdornment={(
