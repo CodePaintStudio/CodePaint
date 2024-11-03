@@ -8,7 +8,7 @@ function ContactItem({ label, value, action }) {
       className="contactContainer"
       sx={{
         width: '27rem',
-        height: '4.429rem',
+        height: '4.2rem',
         backgroundColor: 'black',
         color: 'white',
         display: 'flex',

@@ -36,7 +36,7 @@ function JoinUs() {
       <Box className={styles.QRCode}>
         <img src="../src/images/joinus/qrcode.svg" alt="QQ交流群二维码" />
       </Box>
-      <ContactInfo />
+      <ContactInfo sx={{ paddingTop: '0.5rem', marginTop: '1rem', }} />
       {/* 反馈填写 */}
       <div className={styles.titleFeedback}>FEEDBACK</div>
       <div className={styles.titleFeedbackCn}>反馈</div>

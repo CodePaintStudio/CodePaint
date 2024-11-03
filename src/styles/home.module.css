@@ -86,6 +86,7 @@
 .introContainer{
     display: flex;
     width: 82.143rem;
+    min-height: 64.286rem;
     position: relative;
     background-color: #fff;
     justify-content: center;
