@@ -4,6 +4,7 @@
     height: 100vh;
     width: 100%;
     background-image: url('../images/homepage/home_background.webp');
+    background-color: black;
     background-size: cover;
     justify-content: center;
     align-content: center;
@@ -11,8 +12,15 @@
     flex-wrap: wrap;
 }
 
+.logo{
+    width: 26.714rem;
+    height: 25.357rem;
+    background-size: contain;
+    background-image: url("../images/homepage/logo.webp");
+}
+
 .homeItems{
-    width: 30%;
+    width: 100vw;
     height: 100vh;
     display: flex;
     flex-wrap: wrap;
@@ -22,19 +30,23 @@
 }
 
 .title{
-    width: 35.786rem;
+    /* width: 35.786rem;
     height: 6.214rem;
     background-size: cover;
     background-image: url("../images/general/codePaint.webp");
-    margin-bottom: 2rem;
+    margin-bottom: 2rem; */
+    color: #fff;
+    /* width: 35.768rem; */
+    /* height: 6.214rem; */
+    font-size: 9.143rem;
+    /* font-family: Philosopher,sans-serif; */
+    /* margin-bottom: 20rem; */
+    /* padding-right: 2rem; */
+}
+.title span{
+    color:#68a69f
 }
 
-.logo{
-    width: 26.714rem;
-    height: 25.357rem;
-    background-size: contain;
-    background-image: url("../images/homepage/logo.webp");
-}
 
 .spiltLine{
     width: 20.786rem;
@@ -78,6 +90,7 @@
     width: 100%;
     padding: 0;
     background-image: url("../images/general/generalBackground.webp");
+    background-color: black;
     background-size: cover;
     flex-direction: column;
     align-items: center;
@@ -112,12 +125,17 @@
 }
 
 .mainTitle{
-    width: 36.143rem;
+    /* width: 36.143rem;
     height: 15.5rem;
     background-image: url("../images/general/codePaint.webp");
     background-size: contain;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center; */
+    color: #fff;
+    font-size: 5rem;
+}
+.mainTitle span{
+    color:#68a69f
 }
 
 .carousel{
@@ -172,6 +190,7 @@
     width: 72rem;
     height: 33.214rem;
     background-image: url("../images/homepage/home_background.webp");
+    background-color: black;
     background-size: cover;
     background-repeat: no-repeat;
 }

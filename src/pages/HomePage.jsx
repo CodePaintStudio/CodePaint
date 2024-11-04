@@ -16,6 +16,7 @@ function Home(props) {
   return (
     <>
       <div className={styles.subTitle}>CODEPAINT</div>
+      <div className={styles.mainImage} />
       <Swiper
         loop
         navigation={{ nextEl: '.custom-next', prevEl: '.custom-prev' }}
@@ -51,7 +52,6 @@ function Home(props) {
         tabIndex="-2"
         role="button"
       />
-      <div className={styles.mainImage} />
     </>
   );
 }

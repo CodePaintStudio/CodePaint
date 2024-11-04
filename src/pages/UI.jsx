@@ -62,6 +62,7 @@ function Ui(props) {
       >
         {displayList.map((item, index) => (
           <ImageListItem
+          onClick={() => navigate(`/work/${item.workId}`)}
             key={index}
             sx={{
               width: '29.071rem',

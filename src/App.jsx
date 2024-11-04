@@ -5,7 +5,6 @@ import RouteConfig from './router';
 import countPost from './api/count';
 
 export default function App() {
-
   // 页面加载完成计数
   useEffect(() => {
     countPost();
@@ -16,12 +15,21 @@ export default function App() {
     contentRef.current.scrollIntoView({ behavior: 'smooth' });
   }
   return (
+
     <div className={styles.pageContainer}>
       {/* 首页标题页 */}
+
       <section className={styles.background}>
+
         <div className={styles.homeItems}>
           <div className={styles.logo} />
-          <div className={styles.title} />
+          {/* <div className={styles.title} /> */}
+          <div className={styles.title}>
+            <span>C</span>
+            ODE
+            <span>P</span>
+            INT
+          </div>
           <div className={styles.spiltLine} />
           <p className={styles.slogan}>加入码绘 码上就绘</p>
           <div
@@ -37,7 +45,12 @@ export default function App() {
       {/* 首页主要内容 */}
       <section className={styles.mainArea}>
         <div ref={contentRef} className={styles.mainContainer}>
-          <div className={styles.mainTitle} />
+          <div className={styles.mainTitle}>
+            <span>C</span>
+            ODE
+            <span>P</span>
+            INT
+          </div>
           <NavHeader activeIndex={0} />
           <div className={styles.introContainer}>
             <RouteConfig />
@@ -45,5 +58,6 @@ export default function App() {
         </div>
       </section>
     </div>
+
   );
 }
