@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import styles from '../styles/ui.module.css';
 import SearchBar from '../components/SearchBar';
 import { getAllWorks } from '../api/uiWorks';
-import baseURL from '../utils/baseURL';
+import {baseURL,baseImgURL} from '../utils/baseURL';
 
 function Ui(props) {
   const [searchKey, setSearchKey] = useState('');
@@ -62,6 +62,7 @@ function Ui(props) {
       >
         {displayList.map((item, index) => (
           <ImageListItem
+          onClick={() => navigate(`/work/${item.workId}`)}
             key={index}
             sx={{
               width: '29.071rem',
@@ -80,7 +81,7 @@ function Ui(props) {
             }}
           >
             <img
-              src={`${baseURL}${item.workCover}`}
+              src={`${baseImgURL}${item.workCover}`}
               alt={item.title}
               loading="lazy"
               style={{

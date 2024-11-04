@@ -10,25 +10,40 @@ import Button from '@mui/material/Button';
 import styles from '../styles/joinus.module.css';
 import { sendFeedback } from '../api/joinus';
 import ContactInfo from '../components/ContactInfo';
+import { message } from 'antd';
 
 function JoinUs() {
   const [type, setType] = useState('web_content');
   const [contact, setContact] = useState('');
   const [feedbackContent, setFeedbackContent] = useState('');
+  const [messageApi, contextHolder] = message.useMessage();
 
   function handleSend() {
     if (!feedbackContent || !type) {
+      messageApi.open({
+        type: 'error',
+        content: '内容为空',
+      });
       return;
     }
+
     sendFeedback({
       content: feedbackContent,
       type,
       contact,
+    }).then(() => {
+      messageApi.open({
+        type: 'success',
+        content: '发送成功',
+      });
     });
+
+    setFeedbackContent('');
   }
 
   return (
     <>
+      {contextHolder}
       <div className={styles.subTitle}>加入我们</div>
       {/* 信息展示部分 */}
       <div className={styles.titleContact}>CONTACT US</div>
@@ -200,6 +215,7 @@ function JoinUs() {
         <TextField
           multiline
           placeholder="在这里留下你的反馈"
+          value={feedbackContent}
           onChange={(e) => setFeedbackContent(e.target.value)}
           sx={{
             // width: '75vw',

@@ -8,11 +8,11 @@ export default defineConfig({
   server: {
     proxy: {
       '/article': {
-        target: 'http://47.109.193.161:3543',
+        target: 'http://10.7.127.121:7579',
         changeOrigin: true,
       },
       '/details': {
-        target: 'http://47.109.193.161:3543',
+        target: 'http://10.7.127.121:7579',
         changeOrigin: true,
       },
     },
