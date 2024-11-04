@@ -3,11 +3,11 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { getWorkById } from '../api/uiWorks';
 import styles from '../styles/workDetail.module.css';
 import { Box, Typography } from '@mui/material';
-
+import { baseImgURL,baseURL } from '../utils/baseURL';
 function WorkDetail(props) {
   const { id } = useParams();
   const navigate = useNavigate();
-  const baseURL = 'http://47.109.193.161:3543/';
+
   const [workContent, setWorkContent] = useState({});
   useEffect(() => {
     async function fetchData() {
@@ -31,7 +31,7 @@ function WorkDetail(props) {
       <Box className={styles.intro}>
         <img
           alt="cover"
-          src={`${baseURL}${workContent.workCover}`}
+          src={`${baseImgURL}${workContent.workCover}`}
           className={styles.cover}
           style={{ objectFit: 'cover' }}
         />
@@ -48,7 +48,7 @@ function WorkDetail(props) {
             {workContent.workTags && workContent.workTags.map((tag, index) => (
               <img
                 key={index}
-                src={`${baseURL}${tag}`}
+                src={`${baseImgURL}${tag}`}
                 alt={`work tag ${index}`}
                 className={styles.tagImage}
               />

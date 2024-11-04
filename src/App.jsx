@@ -28,7 +28,7 @@ export default function App() {
             <span>C</span>
             ODE
             <span>P</span>
-            INT
+            AINT
           </div>
           <div className={styles.spiltLine} />
           <p className={styles.slogan}>加入码绘 码上就绘</p>
@@ -49,7 +49,7 @@ export default function App() {
             <span>C</span>
             ODE
             <span>P</span>
-            INT
+            AINT
           </div>
           <NavHeader activeIndex={0} />
           <div className={styles.introContainer}>

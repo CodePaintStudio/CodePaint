@@ -3,8 +3,8 @@ import {
   Card, CardActionArea, CardContent, CardMedia, Typography,
 } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import { baseImgURL,baseURL } from '../utils/baseURL';
 
-const baseURL = 'http://47.109.193.161:3543/';
 
 function BlogItem({ title, image, id, info }) {
   // console.log(`${baseURL}${image}`);
@@ -27,7 +27,7 @@ function BlogItem({ title, image, id, info }) {
       >
         <CardMedia
           // image || "../src/images/homepage/home_background.webp"
-          image={`${baseURL}${image}`}
+          image={`${baseImgURL}${image}`}
           title={title}
           sx={{
             width: '15.714rem',

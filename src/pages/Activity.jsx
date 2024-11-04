@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from '../styles/activity.module.css';
 import ActivitySwiper from '../components/ActivitySwiper';
 import { getActivity, getRecentActivity } from '../api/activty';
-import baseURL from '../utils/baseURL';
+import {baseURL,baseImgURL} from '../utils/baseURL';
 
 function Activity() {
   const [activity, setActivity] = useState([]);
@@ -15,11 +15,11 @@ function Activity() {
       setActivity(upcomingData);
       const upcomingImages = upcomingData.map((item) => ({
         id: item.id,
-        image: `${baseURL}${item.picture}`,
+        image: `${baseImgURL}${item.picture}`,
       }));
       const pastImages = pastData.data.data.map((item) => ({
         id: item.id,
-        image: `${baseURL}${item.picture}`,
+        image: `${baseImgURL}${item.picture}`,
       }));
       setUpcomingList(upcomingImages);
       setPastList(pastImages);
