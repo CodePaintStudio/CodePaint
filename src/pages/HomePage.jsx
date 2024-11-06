@@ -16,26 +16,26 @@ function Home(props) {
   return (
     <>
       <div className={styles.subTitle}>CODEPAINT</div>
-      <div className={styles.mainImage} />
       <Swiper
         loop
-        navigation={{ nextEl: '.custom-next', prevEl: '.custom-prev' }}
+        navigation={{nextEl: '.custom-next', prevEl: '.custom-prev'}}
         spaceBetween={50}
         slidesPerView={1}
         className={styles.carousel}
         modules={[Autoplay, Pagination]}
-        pagination={{ clickable: true }}
+        pagination={{clickable: true}}
         onSwiper={(swiper) => {
           swiperRef.current = swiper;
         }}
-        autoplay={{ delay: 2500, disableOnInteraction: false }}
+        autoplay={{delay: 2500, disableOnInteraction: false}}
       >
         {imagesItems.map((image, index) => (
           <SwiperSlide key={index}>
-            <img src={image} alt={`Slide ${index}`} />
+            <img src={image} alt={`Slide ${index}`}/>
           </SwiperSlide>
         ))}
       </Swiper>
+      <div className={styles.mainImage} />
       <div
         className={styles.previousBtn}
         onClick={() => swiperRef.current.slidePrev()}
