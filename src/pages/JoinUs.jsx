@@ -11,6 +11,7 @@ import styles from '../styles/joinus.module.css';
 import { sendFeedback } from '../api/joinus';
 import ContactInfo from '../components/ContactInfo';
 import { message } from 'antd';
+import qrcode from '../images/joinus/qrcode.svg';
 
 function JoinUs() {
   const [type, setType] = useState('web_content');
@@ -49,9 +50,9 @@ function JoinUs() {
       <div className={styles.titleContact}>CONTACT US</div>
       <div className={styles.titleContactCn}>联系我们</div>
       <Box className={styles.QRCode}>
-        <img src="../src/images/joinus/qrcode.svg" alt="QQ交流群二维码" />
+        <img src={qrcode} alt="QQ交流群二维码" />
       </Box>
-      <ContactInfo sx={{ paddingTop: '0.5rem', marginTop: '1rem', }} />
+      <ContactInfo sx={{ paddingTop: '0.5rem', marginTop: '1rem' }} />
       {/* 反馈填写 */}
       <div className={styles.titleFeedback}>FEEDBACK</div>
       <div className={styles.titleFeedbackCn}>反馈</div>
