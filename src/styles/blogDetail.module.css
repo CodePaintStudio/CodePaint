@@ -1,4 +1,4 @@
-.backButton{
+.backButton {
     position: absolute;
     background-image: url("../images/general/back_button.webp");
     background-size: contain;
@@ -8,7 +8,7 @@
     top: 3.286rem;
 }
 
-.articleTitle{
+.articleTitle {
     position: absolute;
     width: 60%;
     height: 3.571rem;
@@ -16,7 +16,7 @@
     left: 3.357rem;
 }
 
-.author{
+.author {
     width: 60%;
     position: absolute;
     left: 3.357rem;
@@ -24,14 +24,15 @@
 }
 
 .content {
-    display: flex;
-    flex-wrap: wrap;
+    /* display: flex;
+    flex-direction: column;
+    flex-wrap: wrap; */
     width: 70%;
     justify-content: center;
     margin-top: 15.573vw;
 }
 
-.blockquote{
+.blockquote {
     width: 100%;
     display: flex;
     justify-content: flex-start;
