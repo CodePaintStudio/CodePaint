@@ -3,7 +3,9 @@ import { useNavigate, useParams } from "react-router-dom";
 import { getWorkById } from "../api/uiWorks";
 import styles from "../styles/workDetail.module.css";
 import { Box, Typography } from "@mui/material";
-import { baseImgURL, baseURL } from "../utils/baseURL";
+import { baseImgURL } from "../utils/baseURL";
+import { Image } from "antd";
+
 function WorkDetail(props) {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -33,6 +35,7 @@ function WorkDetail(props) {
           src={`${baseImgURL}${workContent.workCover}`}
           className={styles.cover}
           style={{ objectFit: "cover" }}
+          loading="lazy"
         />
         <Box className={styles.basicInfo}>
           <Typography variant="h3" className={styles.title}>
@@ -56,11 +59,13 @@ function WorkDetail(props) {
           <Box className={styles.tagDisplay}>
             {workContent.workTags &&
               workContent.workTags.map((tag, index) => (
-                <img
+                <Image
+                  loading="lazy"
                   key={index}
                   src={`${baseImgURL}${tag}`}
                   alt={`work tag ${index}`}
-                  className={styles.tagImage}
+                  width={"100%"}
+                  style={{ marginBottom: "1rem" }}
                 />
               ))}
           </Box>

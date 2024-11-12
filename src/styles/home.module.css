@@ -1,5 +1,5 @@
 /*封面页*/
-.background{
+.background {
     display: flex;
     height: 100vh;
     width: 100%;
@@ -12,14 +12,14 @@
     flex-wrap: wrap;
 }
 
-.logo{
+.logo {
     width: 26.714rem;
     height: 25.357rem;
     background-size: contain;
     background-image: url("../images/homepage/logo.webp");
 }
 
-.homeItems{
+.homeItems {
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -29,26 +29,18 @@
     justify-content: center;
 }
 
-.title{
-    /* width: 35.786rem;
-    height: 6.214rem;
-    background-size: cover;
-    background-image: url("../images/general/codePaint.webp");
-    margin-bottom: 2rem; */
+.title {
     color: #fff;
-    /* width: 35.768rem; */
-    /* height: 6.214rem; */
     font-size: 9.143rem;
-    /* font-family: Philosopher,sans-serif; */
-    /* margin-bottom: 20rem; */
-    /* padding-right: 2rem; */
+    user-select: none;
 }
-.title span{
-    color:#68a69f
+
+.title span {
+    color: #68a69f
 }
 
 
-.spiltLine{
+.spiltLine {
     width: 20.786rem;
     height: 0.214rem;
     background-color: #D9D9D9;
@@ -56,16 +48,16 @@
     margin-bottom: 1.286rem;
 }
 
-.slogan{
+.slogan {
     display: block;
-    font-family: Philosopher,sans-serif;
+    font-family: Philosopher, sans-serif;
     color: #fff;
     font-size: 1.429rem;
     margin-bottom: 2.357rem;
     margin-right: 0.214rem;
 }
 
-.button{
+.button {
     height: 5.643rem;
     width: 5.643rem;
     background-size: contain;
@@ -76,8 +68,8 @@
 @font-face {
     font-family: 'Philosopher';
     src: url('../font/Philosopher.woff2') format('woff2'),
-    url('../font/Philosopher.woff') format('woff'),
-    url('../font/Philosopher.ttf') format('truetype');
+        url('../font/Philosopher.woff') format('woff'),
+        url('../font/Philosopher.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -96,7 +88,7 @@
     align-items: center;
 }
 
-.introContainer{
+.introContainer {
     display: flex;
     width: 82.143rem;
     min-height: 64.286rem;
@@ -105,12 +97,11 @@
     justify-content: center;
     align-content: flex-start;
     flex-wrap: wrap;
-    margin-bottom: 4rem; /* Add some bottom margin */
-    padding-bottom: 4rem; /* Add some bottom padding */
+    margin-bottom: 4rem;
+    padding-bottom: 4rem;
 }
 
-.subTitle{
-    /*position: absolute;*/
+.subTitle {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -125,30 +116,24 @@
     background-position: center;
 }
 
-.mainTitle{
-    /* width: 36.143rem;
-    height: 15.5rem;
-    background-image: url("../images/general/codePaint.webp");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center; */
+.mainTitle {
     color: #fff;
     font-size: 5rem;
 }
-.mainTitle span{
-    color:#68a69f
+
+.mainTitle span {
+    color: #68a69f
 }
 
-.carousel{
-    /*position: absolute;*/
-    /*top: 10vw;*/
+.carousel {
     width: 72rem;
     height: 21.357rem;
     margin-top: 3.857rem;
-    /*--swiper-pagination-color: #68a69f;*/
+
     :global(.swiper-pagination-bullet-active) {
         background-color: #68a69f;
     }
+
     :global(.swiper-pagination-bullet) {
         width: 0.9375vw;
         height: 0.46875vw;
@@ -156,7 +141,7 @@
     }
 }
 
-.previousBtn{
+.previousBtn {
     position: absolute;
     width: 5.25rem;
     height: 4.9rem;
@@ -168,7 +153,7 @@
     z-index: 10;
 }
 
-.nextBtn{
+.nextBtn {
     position: absolute;
     width: 5.25rem;
     height: 4.9rem;
@@ -181,17 +166,11 @@
 }
 
 .swiper-pagination-bullet-active {
-    background: #68a69f; /* 修改选中时的颜色 */
+    background: #68a69f;
 }
 
-.mainImage{
-    /*position: absolute;*/
-    /*top: 40.365vw;*/
+.mainContent {
     margin-top: 6.571rem;
     width: 72rem;
     height: 33.214rem;
-    background-image: url("../images/homepage/home_background.webp");
-    background-color: black;
-    background-size: cover;
-    background-repeat: no-repeat;
 }

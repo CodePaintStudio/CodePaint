@@ -5,8 +5,8 @@
     box-sizing: border-box;
 }
 
-html{
-    font-size: clamp(12px,0.729vw,60px);
+html {
+    font-size: clamp(12px, 0.729vw, 60px);
 }
 
 /* Remove default margin */
@@ -75,4 +75,14 @@ select {
         transition-duration: 0.01ms !important;
         scroll-behavior: auto !important;
     }
+}
+
+
+div::-webkit-scrollbar {
+    display: none;
+}
+
+div {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
 }

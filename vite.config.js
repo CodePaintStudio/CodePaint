@@ -1,11 +1,12 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import gzipPlugin from 'rollup-plugin-gzip';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
-  assetsInclude:['**/*.PNG'],
+  plugins: [react(), gzipPlugin()],
+  assetsInclude: ['**/*.PNG'],
   server: {
     cors: true,
     proxy: {

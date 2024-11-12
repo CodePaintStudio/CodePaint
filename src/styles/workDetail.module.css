@@ -1,4 +1,4 @@
-.backButton{
+.backButton {
     position: absolute;
     background-image: url("../images/general/back_button.webp");
     background-size: contain;
@@ -8,7 +8,7 @@
     top: 3.286rem;
 }
 
-.intro{
+.intro {
     display: flex;
     flex-wrap: wrap;
     margin-top: 8.9rem;
@@ -16,33 +16,33 @@
     justify-content: center;
 }
 
-.cover{
+.cover {
     width: 37.429rem;
     height: 44.714rem;
     border-radius: 1.286rem;
     margin-right: 3.214rem;
 }
 
-.basicInfo{
+.basicInfo {
     width: 45%;
 }
 
-.title{
+.title {
     font-size: 1.714rem;
-    font-family: "Inter 28pt",sans-serif;
+    font-family: "Inter 28pt", sans-serif;
 }
 
-.createTime{
+.createTime {
     color: #838383
 }
 
-.description{
+.description {
     color: #838383;
     font-size: 1rem;
-    font-family: "Inter 28pt",sans-serif;
+    font-family: "Inter 28pt", sans-serif;
 }
 
-.display{
+.display {
     margin-top: 1.5rem;
     display: flex;
     flex-wrap: wrap;
@@ -50,23 +50,20 @@
     width: 90%;
 }
 
-.subtitle{
+.subtitle {
     display: flex;
     justify-content: center;
     width: 100%;
     font-size: 1.571rem;
     margin-top: 5.357rem;
-    /*width: 14.286rem;*/
 }
 
-.tagDisplay{
+.tagDisplay {
     margin-top: 5.357rem;
 }
 
-.tagImage{
-    width: 44.714rem;
-    height: 53.429rem;
+.tagImage {
     object-fit: cover !important;
-    border-radius: 0.714rem ;
+    border-radius: 0.714rem;
     margin-top: 5.357rem;
 }

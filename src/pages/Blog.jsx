@@ -1,6 +1,4 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
-import { menuClasses, MenuItem } from "@mui/material";
-import Select, { selectClasses } from "@mui/material/Select";
 import styles from "../styles/blog.module.css";
 import SearchBar from "../components/SearchBar";
 import BlogItem from "../components/BlogItem";
@@ -94,7 +92,7 @@ function Blog() {
             blog.articleInfo.toLowerCase().includes(lowerCaseSearchKey))
         );
       });
-      console.log(filteredList);
+      // console.log(filteredList);
       setSearchedList(filteredList);
     }
   }
@@ -103,69 +101,12 @@ function Blog() {
     handleSearch();
   }, [type]);
   const showBlogs = isSearched ? searchedList : displayedBlogs;
+
   return (
     <>
       <div className={styles.subTitle}>前端博客</div>
+      <div className={styles.titleUnpacking}>FrontEnd Blogs</div>
       <div className={styles.searchBarContainer}>
-        {/* <Select
-          value={type}
-          disableUnderline
-          variant="standard"
-          onChange={(event) => setType(event.target.value)}
-          defaultValue="All"
-          MenuProps={{
-            anchorOrigin: {
-              vertical: "bottom",
-              horizontal: "left",
-            },
-            transformOrigin: {
-              vertical: "top",
-              horizontal: "left",
-            },
-            sx: {
-              marginBlock: "0.5rem",
-              [`& .${menuClasses.paper}`]: {
-                borderRadius: "0.857rem",
-              },
-              [`& .${menuClasses.list}`]: {
-                paddingTop: 0,
-                paddingBottom: 0,
-                background: "white",
-                "& li": {
-                  paddingTop: "0.625vw",
-                  paddingBottom: "0.625vw",
-                },
-                "& li:hover": {
-                  background: "#e3f0ef",
-                },
-                "& li.Mui-selected": {
-                  color: "white",
-                  background: "#579a92",
-                },
-                "& li.Mui-selected:hover": {
-                  background: "#468a80",
-                },
-              },
-            },
-          }}
-          sx={{
-            width: "5.5rem",
-            marginRight: "1.429rem",
-            color: "#68a69f",
-            fontWeight: "900",
-            "& .MuiSvgIcon-root": {
-              color: "#68a69f",
-            },
-          }}
-        >
-          <MenuItem value="All">全部</MenuItem>
-          <MenuItem value="js">JS</MenuItem>
-          <MenuItem value="Vue">Vue</MenuItem>
-          <MenuItem value="React">React</MenuItem>
-          <MenuItem value="HTML">HTML</MenuItem>
-        </Select> 
-        这里不正确，先注释掉了
-        */}
         <SearchBar
           searchKey={searchKey}
           setSearchKey={setSearchKey}

@@ -2,7 +2,7 @@ import request from './request';
 
 export function sendFeedback(newFeedback) {
   return request({
-    baseURL: '/details/add',
+    baseURL: '/api/details/add',
     method: 'POST',
     data: newFeedback,
   })

@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import styles from '../styles/activity.module.css';
-import ActivitySwiper from '../components/ActivitySwiper';
-import { getActivity, getRecentActivity } from '../api/activty';
-import {baseURL,baseImgURL} from '../utils/baseURL';
+import React, { useEffect, useState } from "react";
+import styles from "../styles/activity.module.css";
+import ActivitySwiper from "../components/ActivitySwiper";
+import { getActivity, getRecentActivity } from "../api/activty";
+import { baseImgURL } from "../utils/baseURL";
 
 function Activity() {
   const [activity, setActivity] = useState([]);
@@ -33,10 +33,26 @@ function Activity() {
       <div className={styles.titleUnpacking}>UPCOMING ACTIVITIES</div>
       <div className={styles.titleUnpackingCn}>活动预告</div>
       {/* customClass用于轮播图定位 */}
-      {activity.length ? <ActivitySwiper imagesItems={upcomingList} key="unpack" customClass={styles.swiperUnpack} /> : ''}
+      {activity.length ? (
+        <ActivitySwiper
+          imagesItems={upcomingList}
+          key="unpack"
+          customClass={styles.swiperUnpack}
+        />
+      ) : (
+        ""
+      )}
       <div className={styles.titleHistory}>PAST ACTIVITIES</div>
       <div className={styles.titleHistoryCn}>历史活动</div>
-      {activity.length ? <ActivitySwiper imagesItems={pastList} key="history" customClass={styles.swiperHistory} /> : ''}
+      {activity.length ? (
+        <ActivitySwiper
+          imagesItems={pastList}
+          key="history"
+          customClass={styles.swiperHistory}
+        />
+      ) : (
+        ""
+      )}
     </>
   );
 }
